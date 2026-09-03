@@ -24,10 +24,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* ===== БАЗА ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(160deg, #0a1628 0%, #122a4a 50%, #0a1628 100%);
+            background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
             color: #d0e4f8;
             line-height: 1.6;
             min-height: 100vh;
@@ -58,15 +59,10 @@
             color: #8aaac8;
             border: 1px solid #1a3050;
         }
-        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; }
+        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; box-shadow: 0 0 30px rgba(74,184,255,0.05); }
         .btn.large { padding: 14px 40px; font-size: 18px; }
-        .btn.gold {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            color: #0a1628;
-            box-shadow: 0 4px 25px rgba(247,151,30,0.3);
-        }
-        .btn.gold:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(255,210,0,0.35); }
 
+        /* ===== ШАПКА ===== */
         .site-header {
             background: rgba(10,22,40,0.85);
             backdrop-filter: blur(20px);
@@ -133,6 +129,7 @@
             font-size: 13px;
         }
 
+        /* ===== СТРАНИЦА ИГР ===== */
         .page-title {
             padding: 40px 0 20px;
         }
@@ -146,11 +143,15 @@
             font-size: 18px;
             max-width: 700px;
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .section { padding: 50px 0; }
+        .section.soft { background: rgba(10,22,40,0.4); backdrop-filter: blur(4px); }
 
         .provider-filter {
             display: flex;
@@ -212,26 +213,6 @@
         .game-card .card-body p { color: #8aaac8; font-size: 14px; }
         .game-card .card-body .btn { margin-top: 12px; width: 100%; }
 
-        .section { padding: 50px 0; }
-        .providers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
-        .providers-grid .provider-item {
-            background: rgba(17,29,53,0.5);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(26,48,80,0.3);
-            border-radius: 12px;
-            padding: 16px 12px;
-            text-align: center;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .providers-grid .provider-item:hover { border-color: #4ab8ff; transform: scale(1.04); }
-        .providers-grid .provider-item strong { color: #d0e4f8; font-size: 13px; display: block; }
-
         .table-wrap {
             overflow-x: auto;
             margin: 16px 0 24px;
@@ -261,16 +242,13 @@
 
         .prose h2 {
             font-size: 26px;
-            color: #ffffff;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin: 40px 0 12px;
             padding-top: 10px;
         }
         .prose h2:first-child { margin-top: 0; }
-        .prose h2 .highlight {
-            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         .prose p { color: #d0e4f8; margin-bottom: 16px; }
         .prose ul {
             list-style: none;
@@ -425,6 +403,12 @@
             justify-content: center;
             flex-wrap: wrap;
         }
+        .age-gate-card a {
+            display: block;
+            margin-top: 16px;
+            color: #5a7a9a;
+            font-size: 14px;
+        }
 
         @media (max-width: 992px) {
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -469,13 +453,14 @@
     <div class="age-gate" data-age-gate role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
         <div class="age-gate-card">
             <span class="age-gate-mark">18+</span>
-            <p class="eyebrow">Проверка возраста</p>
-            <h2 id="age-gate-title">Подтвердите, что вам есть 18 лет</h2>
-            <p>Данный сайт содержит информацию об азартных играх и предназначен только для совершеннолетних пользователей.</p>
+            <p class="eyebrow">Подтверждение возраста</p>
+            <h2 id="age-gate-title">Вам уже исполнилось 18 лет?</h2>
+            <p>Сайт содержит информацию об азартных играх и предназначен только для совершеннолетних. Азартная игра не является способом заработка.</p>
             <div class="age-gate-actions">
-                <button type="button" class="btn primary large" data-age-accept>Да, мне 18+</button>
-                <button type="button" class="btn ghost large" data-age-reject>Мне меньше 18</button>
+                <button type="button" class="btn primary large" data-age-accept>Да, мне есть 18</button>
+                <button type="button" class="btn ghost large" data-age-reject>Мне нет 18</button>
             </div>
+            <a href="rules.html">Ответственная игра и ограничения</a>
         </div>
     </div>
 
@@ -536,6 +521,7 @@
             <div class="container">
                 <div class="games-grid" id="gamesGrid">
 
+                    <!-- 1. Anubis Wrath -->
                     <div class="game-card" data-provider="pragmatic">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/anubis-wrath.jpg" alt="Anubis Wrath" loading="lazy"></div>
@@ -543,11 +529,12 @@
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Anubis Wrath</h3>
                                 <p>Захватывающий слот с механикой выплат "везде" и множителями до x5000. Бонусный раунд с фриспинами.</p>
-                                <button class="btn gold">Играть</button>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
+                    <!-- 2. Wild Bounty Snowdown -->
                     <div class="game-card" data-provider="pragmatic">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/wild-bounty-snowdown.jpg" alt="Wild Bounty Snowdown" loading="lazy"></div>
@@ -555,11 +542,12 @@
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Wild Bounty Snowdown</h3>
                                 <p>Приключенческий слот с каскадными барабанами, бонусными раундами и множителями до x1000.</p>
-                                <button class="btn gold">Играть</button>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
+                    <!-- 3. Treasures of Aztec -->
                     <div class="game-card" data-provider="pragmatic">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/treasures-of-aztec.jpg" alt="Treasures of Aztec" loading="lazy"></div>
@@ -567,11 +555,12 @@
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Treasures of Aztec</h3>
                                 <p>Исследуйте древние цивилизации с расширяющимися символами и фриспинами. Джекпот до x2500.</p>
-                                <button class="btn gold">Играть</button>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
+                    <!-- 4. Crazy Time -->
                     <div class="game-card" data-provider="evolution">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/crazy-time.jpg" alt="Crazy Time" loading="lazy"></div>
@@ -579,110 +568,122 @@
                                 <div class="provider">Evolution</div>
                                 <h3>Crazy Time</h3>
                                 <p>Знаменитое шоу от Evolution с живыми дилерами, бонусными раундами и множителями до x10000.</p>
-                                <button class="btn gold">Играть</button>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <div class="game-card" data-provider="pgsoft">
+                    <!-- 5. Aviators -->
+                    <div class="game-card" data-provider="pragmatic">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/anubis-wrath.jpg" alt="Dragon Hatch" loading="lazy"></div>
+                            <div class="card-media"><img src="images/aviamasters-2.jpg" alt="Aviators" loading="lazy"></div>
                             <div class="card-body">
-                                <div class="provider">PG Soft</div>
-                                <h3>Dragon Hatch</h3>
-                                <p>Мифический слот с яйцами дракона, множителями и бонусной игрой. RTP 96.5%.</p>
-                                <button class="btn gold">Играть</button>
+                                <div class="provider">Spribe</div>
+                                <h3>Aviators</h3>
+                                <p>Популярная краш-игра с растущими множителями. Забирайте выигрыш до падения самолёта!</p>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <div class="game-card" data-provider="hacksaw">
+                    <!-- 6. Blackjack First Person -->
+                    <div class="game-card" data-provider="evolution">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/wild-bounty-snowdown.jpg" alt="Wanted Dead or Wild" loading="lazy"></div>
+                            <div class="card-media"><img src="images/blackjack-first-person.jpg" alt="Blackjack First Person" loading="lazy"></div>
                             <div class="card-body">
-                                <div class="provider">Hacksaw Gaming</div>
-                                <h3>Wanted Dead or Wild</h3>
-                                <p>Дикий вестерн-слот с высокой волатильностью, множителями и бонусными раундами.</p>
-                                <button class="btn gold">Играть</button>
+                                <div class="provider">Evolution</div>
+                                <h3>Blackjack First Person</h3>
+                                <p>Классический блэкджек с видом от первого лица. Реалистичная атмосфера и быстрые раунды.</p>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
+                    <!-- 7. Candy Hole -->
+                    <div class="game-card" data-provider="pragmatic">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media"><img src="images/candy-hole.jpg" alt="Candy Hole" loading="lazy"></div>
+                            <div class="card-body">
+                                <div class="provider">Pragmatic Play</div>
+                                <h3>Candy Hole</h3>
+                                <p>Яркий сладкий слот с бонусными раундами, множителями и фриспинами. RTP 96.5%.</p>
+                                <button class="btn primary">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 8. Falling Pickaxe -->
                     <div class="game-card" data-provider="bgaming">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/treasures-of-aztec.jpg" alt="Book of Cats" loading="lazy"></div>
+                            <div class="card-media"><img src="images/falling-pickaxe.jpg" alt="Falling Pickaxe" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">BGaming</div>
-                                <h3>Book of Cats</h3>
-                                <p>Популярный слот с расширяющимися символами и фриспинами. Тематика Древнего Египта.</p>
-                                <button class="btn gold">Играть</button>
+                                <h3>Falling Pickaxe</h3>
+                                <p>Увлекательный слот с падающими символами и множителями. Каскадные выигрыши до x3000.</p>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <div class="game-card" data-provider="playngo">
+                    <!-- 9. Mines -->
+                    <div class="game-card" data-provider="pragmatic">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/crazy-time.jpg" alt="Book of Dead" loading="lazy"></div>
+                            <div class="card-media"><img src="images/mines.jpg" alt="Mines" loading="lazy"></div>
                             <div class="card-body">
-                                <div class="provider">Play'n GO</div>
-                                <h3>Book of Dead</h3>
-                                <p>Легендарный слот с богатым Ричем Уайлдом. Расширяющиеся символы и фриспины с множителями.</p>
-                                <button class="btn gold">Играть</button>
+                                <div class="provider">Spribe</div>
+                                <h3>Mines</h3>
+                                <p>Краш-игра с минами. Открывайте клетки и увеличивайте множитель, но не наступите на мину!</p>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <div class="game-card" data-provider="relax">
+                    <!-- 10. Speed Roulette -->
+                    <div class="game-card" data-provider="evolution">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/anubis-wrath.jpg" alt="Money Train 2" loading="lazy"></div>
+                            <div class="card-media"><img src="images/speed-roulette.jpg" alt="Speed Roulette" loading="lazy"></div>
                             <div class="card-body">
-                                <div class="provider">Relax Gaming</div>
-                                <h3>Money Train 2</h3>
-                                <p>Культовый слот с поездом, бонусными раундами и множителями до x50000. Высокая волатильность.</p>
-                                <button class="btn gold">Играть</button>
+                                <div class="provider">Evolution</div>
+                                <h3>Speed Roulette</h3>
+                                <p>Быстрая рулетка с живым дилером. Раунды всего за 25 секунд. Классические ставки и множители.</p>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <div class="game-card" data-provider="netent">
+                    <!-- 11. Speed Winner -->
+                    <div class="game-card" data-provider="pragmatic">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/wild-bounty-snowdown.jpg" alt="Starburst" loading="lazy"></div>
+                            <div class="card-media"><img src="images/speed-winner.jpg" alt="Speed Winner" loading="lazy"></div>
                             <div class="card-body">
-                                <div class="provider">NetEnt</div>
-                                <h3>Starburst</h3>
-                                <p>Классический слот с яркими драгоценными камнями и расширяющимися дикими символами. RTP 96.1%.</p>
-                                <button class="btn gold">Играть</button>
+                                <div class="provider">Pragmatic Play</div>
+                                <h3>Speed Winner</h3>
+                                <p>Динамичный слот с быстрыми раундами и крупными множителями. Максимальный выигрыш x5000.</p>
+                                <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                </div>
-            </div>
-        </section>
+                    <!-- 12. Tower Rush -->
+                    <div class="game-card" data-provider="pragmatic">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media"><img src="images/tower-rush.jpg" alt="Tower Rush" loading="lazy"></div>
+                            <div class="card-body">
+                                <div class="provider">Pragmatic Play</div>
+                                <h3>Tower Rush</h3>
+                                <p>Приключенческий слот с башнями, бонусными раундами и множителями. Джекпот до x4000.</p>
+                                <button class="btn primary">Играть</button>
+                            </div>
+                        </a>
+                    </div>
 
-        <section>
-            <div class="container">
-                <h2 style="font-size: 28px; color: #ffffff; margin-bottom: 16px;">Все провайдеры</h2>
-                <div class="providers-grid">
-                    <div class="provider-item"><strong>Pragmatic Play</strong></div>
-                    <div class="provider-item"><strong>Evolution</strong></div>
-                    <div class="provider-item"><strong>PG Soft</strong></div>
-                    <div class="provider-item"><strong>Hacksaw Gaming</strong></div>
-                    <div class="provider-item"><strong>BGaming</strong></div>
-                    <div class="provider-item"><strong>Play'n GO</strong></div>
-                    <div class="provider-item"><strong>Relax Gaming</strong></div>
-                    <div class="provider-item"><strong>NetEnt</strong></div>
-                    <div class="provider-item"><strong>Push Gaming</strong></div>
-                    <div class="provider-item"><strong>Microgaming</strong></div>
-                    <div class="provider-item"><strong>Yggdrasil</strong></div>
-                    <div class="provider-item"><strong>Quickspin</strong></div>
                 </div>
             </div>
         </section>
 
         <section>
             <div class="container prose">
-                <h2><span class="highlight">Популярные категории</span> игр</h2>
+                <h2><span class="gradient-text">Популярные категории</span> игр</h2>
                 <p>В каталоге Lucky Bear представлены игры на любой вкус. Мы собрали лучшие слоты, настольные игры и live-казино от проверенных провайдеров.</p>
                 <div class="table-wrap">
                     <table>
@@ -698,7 +699,7 @@
                     </table>
                 </div>
 
-                <h2><span class="highlight">Советы по выбору</span> игр</h2>
+                <h2><span class="gradient-text">Советы по выбору</span> игр</h2>
                 <p>При выборе слота обращайте внимание на несколько ключевых параметров:</p>
                 <ul>
                     <li><strong>RTP (Возврат игроку)</strong> — чем выше, тем лучше. Выбирайте слоты с RTP от 96%.</li>
@@ -765,7 +766,6 @@
                     window.location.href = 'https://www.google.com';
                 });
             }
-
             const menuButton = document.querySelector('[data-menu]');
             const nav = document.querySelector('[data-nav]');
             if (menuButton && nav) {
@@ -776,7 +776,6 @@
                     menuButton.innerHTML = expanded ? '<i class="fas fa-times"></i> Закрыть' : '<i class="fas fa-bars"></i> Меню';
                 });
             }
-
             const filterButtons = document.querySelectorAll('.filter-btn');
             const gameCards = document.querySelectorAll('.game-card');
             filterButtons.forEach(button => {
@@ -791,6 +790,20 @@
                             card.style.display = 'none';
                         }
                     });
+                });
+            });
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
                 });
             });
         })();
