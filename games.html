@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игры Bear Casino — более 1500 слотов от 30+ провайдеров</title>
+    <meta name="description" content="Каталог игр Bear Casino для игроков из СНГ. Более 1500 слотов от Pragmatic Play, Evolution, PG Soft и других провайдеров. Играй в лучшие автоматы онлайн.">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112271806', 'ym');
+
+        ym(112271806, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/112271806" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== БАЗОВЫЕ СТИЛИ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(160deg, #0a1628 0%, #122a4a 50%, #0a1628 100%);
+            color: #d0e4f8;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #4ab8ff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #7acbff;
+            text-shadow: 0 0 25px rgba(74, 184, 255, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            color: #ffffff;
+            box-shadow: 0 4px 25px rgba(26, 124, 204, 0.3);
+        }
+        .btn.primary:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 40px rgba(74, 184, 255, 0.35);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: #8aaac8;
+            border: 1px solid #1a3050;
+        }
+        .btn.ghost:hover {
+            border-color: #4ab8ff;
+            color: #4ab8ff;
+            box-shadow: 0 0 30px rgba(74, 184, 255, 0.05);
+        }
+
+        .btn.large {
+            padding: 14px 40px;
+            font-size: 18px;
+        }
+
+        .btn.gold {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            color: #0a1628;
+            box-shadow: 0 4px 25px rgba(247, 151, 30, 0.3);
+        }
+        .btn.gold:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 40px rgba(255, 210, 0, 0.35);
+        }
+
+        /* ===== ШАПКА ===== */
+        .site-header {
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(26, 48, 80, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .brand img { height: 44px; width: auto; display: block; }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #8aaac8;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .main-nav a:hover {
+            color: #4ab8ff;
+            text-shadow: 0 0 20px rgba(74, 184, 255, 0.15);
+        }
+        .main-nav a.active {
+            color: #4ab8ff;
+            border-bottom: 2px solid #4ab8ff;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .age-badge {
+            background: #1a3050;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #4ab8ff;
+            font-size: 13px;
+        }
+
+        /* ===== СТРАНИЦА ИГР ===== */
+        .page-title {
+            padding: 40px 0 20px;
+        }
+        .page-title h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .page-title p {
+            color: #8aaac8;
+            font-size: 18px;
+            max-width: 700px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Фильтр провайдеров */
+        .provider-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 30px;
+        }
+        .provider-filter .filter-btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: rgba(17, 29, 53, 0.6);
+            border: 1px solid rgba(26, 48, 80, 0.4);
+            color: #8aaac8;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .provider-filter .filter-btn:hover {
+            border-color: #4ab8ff;
+            color: #4ab8ff;
+        }
+        .provider-filter .filter-btn.active {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            color: #ffffff;
+            border-color: #4ab8ff;
+        }
+
+        /* Сетка игр */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 20px 0 40px;
+        }
+
+        .game-card {
+            background: rgba(17, 29, 53, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26, 48, 80, 0.4);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .game-card:hover {
+            border-color: #4ab8ff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(74, 184, 255, 0.08);
+        }
+        .game-card a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        .game-card .card-media img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            background: #0f2040;
+        }
+        .game-card .card-body {
+            padding: 16px 20px 20px;
+        }
+        .game-card .card-body .provider {
+            font-size: 12px;
+            color: #4ab8ff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .game-card .card-body h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 4px 0 8px;
+        }
+        .game-card .card-body p {
+            color: #8aaac8;
+            font-size: 14px;
+        }
+        .game-card .card-body .btn {
+            margin-top: 12px;
+            width: 100%;
+        }
+
+        /* ===== ПРОВАЙДЕРЫ ===== */
+        .providers-section {
+            padding: 30px 0;
+        }
+        .providers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .providers-grid .provider-item {
+            background: rgba(17, 29, 53, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26, 48, 80, 0.3);
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .providers-grid .provider-item:hover {
+            border-color: #4ab8ff;
+            transform: scale(1.04);
+        }
+        .providers-grid .provider-item strong {
+            color: #d0e4f8;
+            font-size: 13px;
+            display: block;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+        }
+        .table-wrap table {
+            width: 100%;
+            background: rgba(17, 29, 53, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            border-collapse: collapse;
+            font-size: 15px;
+            border: 1px solid rgba(26, 48, 80, 0.4);
+        }
+        .table-wrap th {
+            background: rgba(26, 48, 80, 0.4);
+            color: #4ab8ff;
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .table-wrap td {
+            padding: 12px 18px;
+            border-bottom: 1px solid rgba(26, 48, 80, 0.3);
+            color: #d0e4f8;
+        }
+        .table-wrap tr:last-child td { border-bottom: none; }
+
+        .prose h2 {
+            font-size: 26px;
+            color: #ffffff;
+            margin: 40px 0 12px;
+            padding-top: 10px;
+        }
+        .prose h2:first-child { margin-top: 0; }
+        .prose h2 .highlight {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .prose p {
+            color: #d0e4f8;
+            margin-bottom: 16px;
+        }
+
+        /* ===== ФУТЕР ===== */
+        .footer-cta {
+            background: linear-gradient(145deg, rgba(10, 22, 40, 0.8), rgba(15, 32, 64, 0.6));
+            border-top: 1px solid rgba(26, 48, 80, 0.3);
+            border-bottom: 1px solid rgba(26, 48, 80, 0.3);
+            padding: 50px 0;
+        }
+        .footer-cta .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-cta h2 {
+            color: #ffffff;
+            font-size: 28px;
+        }
+        .footer-cta p {
+            color: #8aaac8;
+            max-width: 500px;
+        }
+
+        .site-footer {
+            background: rgba(10, 22, 40, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(26, 48, 80, 0.3);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        .footer-brand p {
+            color: #8aaac8;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+        .footer-trust {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-trust span {
+            background: rgba(26, 48, 80, 0.4);
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #8aaac8;
+        }
+        .footer-grid strong {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-grid a {
+            display: block;
+            color: #8aaac8;
+            font-size: 14px;
+            padding: 3px 0;
+            transition: 0.3s;
+        }
+        .footer-grid a:hover { color: #4ab8ff; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(26, 48, 80, 0.3);
+            padding-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #5a7a9a;
+        }
+
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(26, 48, 80, 0.4);
+            padding: 10px;
+            gap: 10px;
+            z-index: 200;
+        }
+        .mobile-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .mobile-bar a:first-child {
+            background: transparent;
+            border: 1px solid #1a3050;
+            color: #8aaac8;
+        }
+        .mobile-bar a:last-child {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            color: #ffffff;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px 0;
+                gap: 8px;
+            }
+            .main-nav.open { display: flex; }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                padding-top: 12px;
+                border-top: 1px solid rgba(26, 48, 80, 0.3);
+            }
+            .page-title h1 { font-size: 30px; }
+            .games-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+            .provider-filter { gap: 6px; }
+            .provider-filter .filter-btn { font-size: 12px; padding: 6px 14px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-cta .container { flex-direction: column; text-align: center; }
+            .mobile-bar { display: flex; }
+            .site-footer { padding-bottom: 80px; }
+        }
+
+        @media (max-width: 480px) {
+            .page-title h1 { font-size: 24px; }
+            .games-grid { grid-template-columns: 1fr; }
+            .btn.large { padding: 12px 24px; font-size: 16px; }
+        }
+
+        [hidden] { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="Bear Casino" loading="lazy">
+                Bear Casino
+            </a>
+            <nav class="main-nav" data-nav>
+                <a href="index.html">Главная</a>
+                <a href="bonus.html">Бонусы</a>
+                <a href="games.html" class="active">Игры</a>
+                <a href="app.html">Приложение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+            <div class="header-actions">
+                <span class="age-badge">18+</span>
+                <a class="btn ghost" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Войти</a>
+                <a class="btn primary" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+    <main>
+
+        <!-- ===== ЗАГОЛОВОК СТРАНИЦЫ ===== -->
+        <section class="page-title">
+            <div class="container">
+                <h1>Каталог игр <span class="gradient-text">Bear Casino</span></h1>
+                <p>Более 1500 лицензионных слотов от 30+ ведущих мировых провайдеров. Играй в лучшие автоматы, настольные игры и live-казино с живыми дилерами.</p>
+            </div>
+        </section>
+
+        <!-- ===== ФИЛЬТР ПРОВАЙДЕРОВ ===== -->
+        <section>
+            <div class="container">
+                <div class="provider-filter" id="providerFilter">
+                    <button class="filter-btn active" data-provider="all">Все игры</button>
+                    <button class="filter-btn" data-provider="pragmatic">Pragmatic Play</button>
+                    <button class="filter-btn" data-provider="evolution">Evolution</button>
+                    <button class="filter-btn" data-provider="pgsoft">PG Soft</button>
+                    <button class="filter-btn" data-provider="hacksaw">Hacksaw Gaming</button>
+                    <button class="filter-btn" data-provider="bgaming">BGaming</button>
+                    <button class="filter-btn" data-provider="playngo">Play'n GO</button>
+                    <button class="filter-btn" data-provider="relax">Relax Gaming</button>
+                    <button class="filter-btn" data-provider="netent">NetEnt</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕТКА ИГР ===== -->
+        <section>
+            <div class="container">
+                <div class="games-grid" id="gamesGrid">
+
+                    <!-- Pragmatic Play -->
+                    <div class="game-card" data-provider="pragmatic">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/anubis-wrath.jpg" alt="Anubis Wrath" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">Pragmatic Play</div>
+                                <h3>Anubis Wrath</h3>
+                                <p>Захватывающий слот с механикой выплат "везде" и множителями до x5000. Бонусный раунд с фриспинами.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="game-card" data-provider="pragmatic">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/wild-bounty-snowdown.jpg" alt="Wild Bounty Snowdown" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">Pragmatic Play</div>
+                                <h3>Wild Bounty Snowdown</h3>
+                                <p>Приключенческий слот с каскадными барабанами, бонусными раундами и множителями до x1000.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="game-card" data-provider="pragmatic">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/treasures-of-aztec.jpg" alt="Treasures of Aztec" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">Pragmatic Play</div>
+                                <h3>Treasures of Aztec</h3>
+                                <p>Исследуй древние цивилизации с расширяющимися символами и фриспинами. Джекпот до x2500.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Evolution -->
+                    <div class="game-card" data-provider="evolution">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/crazy-time.jpg" alt="Crazy Time" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">Evolution</div>
+                                <h3>Crazy Time</h3>
+                                <p>Знаменитое шоу от Evolution с живыми дилерами, бонусными раундами и множителями до x10000.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- PG Soft -->
+                    <div class="game-card" data-provider="pgsoft">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/anubis-wrath.jpg" alt="Dragon Hatch" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">PG Soft</div>
+                                <h3>Dragon Hatch</h3>
+                                <p>Мифический слот с яйцами дракона, множителями и бонусной игрой. RTP 96.5%.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Hacksaw Gaming -->
+                    <div class="game-card" data-provider="hacksaw">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/wild-bounty-snowdown.jpg" alt="Wanted Dead or Wild" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">Hacksaw Gaming</div>
+                                <h3>Wanted Dead or Wild</h3>
+                                <p>Дикий вестерн-слот с высокой волатильностью, множителями и бонусными раундами.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- BGaming -->
+                    <div class="game-card" data-provider="bgaming">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/treasures-of-aztec.jpg" alt="Book of Cats" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">BGaming</div>
+                                <h3>Book of Cats</h3>
+                                <p>Популярный слот с расширяющимися символами и фриспинами. Тематика Древнего Египта.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Play'n GO -->
+                    <div class="game-card" data-provider="playngo">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/crazy-time.jpg" alt="Book of Dead" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">Play'n GO</div>
+                                <h3>Book of Dead</h3>
+                                <p>Легендарный слот с богатым Ричем Уайлдом. Расширяющиеся символы и фриспины с множителями.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Relax Gaming -->
+                    <div class="game-card" data-provider="relax">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/anubis-wrath.jpg" alt="Money Train 2" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">Relax Gaming</div>
+                                <h3>Money Train 2</h3>
+                                <p>Культовый слот с поездом, бонусными раундами и множителями до x50000. Высокая волатильность.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- NetEnt -->
+                    <div class="game-card" data-provider="netent">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media">
+                                <img src="images/wild-bounty-snowdown.jpg" alt="Starburst" loading="lazy">
+                            </div>
+                            <div class="card-body">
+                                <div class="provider">NetEnt</div>
+                                <h3>Starburst</h3>
+                                <p>Классический слот с яркими драгоценными камнями и расширяющимися дикими символами. RTP 96.1%.</p>
+                                <button class="btn gold">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СПИСОК ВСЕХ ПРОВАЙДЕРОВ ===== -->
+        <section class="providers-section">
+            <div class="container">
+                <h2 style="font-size: 28px; color: #ffffff; margin-bottom: 16px;">Все провайдеры</h2>
+                <div class="providers-grid">
+                    <div class="provider-item"><strong>Pragmatic Play</strong></div>
+                    <div class="provider-item"><strong>Evolution</strong></div>
+                    <div class="provider-item"><strong>PG Soft</strong></div>
+                    <div class="provider-item"><strong>Hacksaw Gaming</strong></div>
+                    <div class="provider-item"><strong>BGaming</strong></div>
+                    <div class="provider-item"><strong>Play'n GO</strong></div>
+                    <div class="provider-item"><strong>Relax Gaming</strong></div>
+                    <div class="provider-item"><strong>NetEnt</strong></div>
+                    <div class="provider-item"><strong>Push Gaming</strong></div>
+                    <div class="provider-item"><strong>Microgaming</strong></div>
+                    <div class="provider-item"><strong>Yggdrasil</strong></div>
+                    <div class="provider-item"><strong>Quickspin</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ДЕТАЛЬНАЯ ИНФОРМАЦИЯ ===== -->
+        <section class="section">
+            <div class="container prose">
+
+                <h2><span class="highlight">Популярные категории</span> игр</h2>
+                <p>В каталоге Bear Casino представлены игры на любой вкус. Мы собрали лучшие слоты, настольные игры и live-казино от проверенных провайдеров.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Категория</th>
+                                <th>Количество игр</th>
+                                <th>Особенности</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Слоты</td>
+                                <td>1200+</td>
+                                <td>Бонусные раунды, фриспины, множители, джекпоты</td>
+                            </tr>
+                            <tr>
+                                <td>Live-казино</td>
+                                <td>200+</td>
+                                <td>Игры с живыми дилерами, рулетка, блэкджек, покер</td>
+                            </tr>
+                            <tr>
+                                <td>Настольные игры</td>
+                                <td>100+</td>
+                                <td>Рулетка, блэкджек, баккара, видеопокер</td>
+                            </tr>
+                            <tr>
+                                <td>Крэш-игры</td>
+                                <td>50+</td>
+                                <td>Mines, JetX, Plinko, Aviator и другие</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2><span class="highlight">Советы по выбору</span> игр</h2>
+                <p>При выборе слота обращай внимание на несколько ключевых параметров:</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>RTP (Возврат игроку)</strong> — чем выше, тем лучше. Выбирай слоты с RTP от 96%.
+                    </li>
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>Волатильность</strong> — низкая даёт частые мелкие выигрыши, высокая — редкие, но крупные.
+                    </li>
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>Бонусные функции</strong> — фриспины, множители, бонусные раунды увеличивают шансы на крупный выигрыш.
+                    </li>
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>Провайдер</strong> — выбирай игры от топовых разработчиков с хорошей репутацией.
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== ПРИЗЫВ К ДЕЙСТВИЮ ===== -->
+    <section class="footer-cta">
+        <div class="container">
+            <div>
+                <h2>Готов начать играть?</h2>
+                <p>Зарегистрируйся в Bear Casino и получи доступ к более чем 1500 играм от лучших провайдеров. Бонус до 250% ждёт тебя!</p>
+            </div>
+            <a class="btn primary large" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Начать играть</a>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="site-footer" id="contacts">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <img src="images/logo.png" alt="Bear Casino" style="height:40px; width:auto;">
+                    <span style="font-size:20px; font-weight:800; color:#ffffff;">Bear Casino</span>
+                </div>
+                <p>Русскоязычный сайт Bear Casino для совершеннолетних игроков из стран СНГ. Азартная игра не является способом заработка.</p>
+                <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка</span></div>
+            </div>
+            <div><strong>Аккаунт</strong><a href="index.html">Главная</a><a href="bonus.html">Бонусы</a></div>
+            <div><strong>Игры</strong><a href="games.html">Каталог</a></div>
+            <div><strong>Приложение</strong><a href="app.html">Скачать</a></div>
+            <div><strong>Контакты</strong><a href="reviews.html">Отзывы</a><a href="contacts.html">Связаться</a></div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Bear Casino</span>
+            <span>СНГ · 18+</span>
+        </div>
+    </footer>
+
+    <!-- ===== МОБИЛЬНАЯ ПАНЕЛЬ ===== -->
+    <div class="mobile-bar">
+        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Вход</a>
+        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Играть</a>
+    </div>
+
+    <!-- ===== СКРИПТЫ ===== -->
+    <script>
+        (function() {
+            'use strict';
+
+            // Фильтр игр по провайдеру
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const gameCards = document.querySelectorAll('.game-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Убираем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const provider = this.dataset.provider;
+
+                    gameCards.forEach(card => {
+                        if (provider === 'all' || card.dataset.provider === provider) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Плавная прокрутка
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Мобильное меню
+            const menuButton = document.querySelector('[data-menu]');
+            const nav = document.querySelector('[data-nav]');
+
+            if (menuButton && nav) {
+                menuButton.addEventListener('click', function() {
+                    nav.classList.toggle('open');
+                });
+            }
+
+        })();
+    </script>
+
+</body>
+</html>
