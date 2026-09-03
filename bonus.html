@@ -24,10 +24,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* ===== БАЗА ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(160deg, #0a1628 0%, #122a4a 50%, #0a1628 100%);
+            background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
             color: #d0e4f8;
             line-height: 1.6;
             min-height: 100vh;
@@ -58,15 +59,10 @@
             color: #8aaac8;
             border: 1px solid #1a3050;
         }
-        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; }
+        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; box-shadow: 0 0 30px rgba(74,184,255,0.05); }
         .btn.large { padding: 14px 40px; font-size: 18px; }
-        .btn.gold {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            color: #0a1628;
-            box-shadow: 0 4px 25px rgba(247,151,30,0.3);
-        }
-        .btn.gold:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(255,210,0,0.35); }
 
+        /* ===== ШАПКА ===== */
         .site-header {
             background: rgba(10,22,40,0.85);
             backdrop-filter: blur(20px);
@@ -133,6 +129,7 @@
             font-size: 13px;
         }
 
+        /* ===== СТРАНИЦА БОНУСОВ ===== */
         .page-title {
             padding: 40px 0 20px;
         }
@@ -146,11 +143,15 @@
             font-size: 18px;
             max-width: 700px;
         }
+
         .gradient-text {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .section { padding: 50px 0; }
+        .section.soft { background: rgba(10,22,40,0.4); backdrop-filter: blur(4px); }
 
         .bonus-grid {
             display: grid;
@@ -169,11 +170,15 @@
             position: relative;
             overflow: hidden;
         }
-        .bonus-card:hover { border-color: #ffd200; transform: translateY(-4px); }
+        .bonus-card:hover {
+            border-color: #4ab8ff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(74,184,255,0.08);
+        }
         .bonus-card .badge {
             display: inline-block;
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            color: #0a1628;
+            background: rgba(26,48,80,0.5);
+            color: #4ab8ff;
             padding: 4px 14px;
             border-radius: 20px;
             font-size: 12px;
@@ -183,7 +188,7 @@
         .bonus-card .amount {
             font-size: 42px;
             font-weight: 800;
-            background: linear-gradient(135deg, #f7971e, #ffd200);
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 10px 0 6px;
@@ -209,9 +214,6 @@
         .bonus-features .item strong { display: block; font-size: 20px; color: #ffffff; }
         .bonus-features .item span { color: #8aaac8; font-size: 13px; }
 
-        .section { padding: 50px 0; }
-        .section.soft { background: rgba(10,22,40,0.4); backdrop-filter: blur(4px); }
-
         .table-wrap {
             overflow-x: auto;
             margin: 16px 0 24px;
@@ -227,7 +229,7 @@
         }
         .table-wrap th {
             background: rgba(26,48,80,0.4);
-            color: #ffd200;
+            color: #4ab8ff;
             padding: 14px 18px;
             text-align: left;
             font-weight: 600;
@@ -238,20 +240,17 @@
             color: #d0e4f8;
         }
         .table-wrap tr:last-child td { border-bottom: none; }
-        .table-wrap .highlight { color: #ffd200; font-weight: 600; }
+        .table-wrap .highlight { color: #4ab8ff; font-weight: 600; }
 
         .prose h2 {
             font-size: 26px;
-            color: #ffffff;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin: 40px 0 12px;
             padding-top: 10px;
         }
         .prose h2:first-child { margin-top: 0; }
-        .prose h2 .highlight {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         .prose p { color: #d0e4f8; margin-bottom: 16px; }
         .prose ul {
             list-style: none;
@@ -266,7 +265,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #ffd200;
+            color: #4ab8ff;
             font-weight: 700;
         }
 
@@ -279,16 +278,17 @@
             margin-bottom: 10px;
             transition: 0.3s;
         }
-        .faq details:hover { border-color: #ffd200; }
+        .faq details:hover { border-color: #4ab8ff; }
         .faq summary {
             font-weight: 600;
             color: #ffffff;
             cursor: pointer;
             font-size: 17px;
         }
-        .faq summary:hover { color: #ffd200; }
+        .faq summary:hover { color: #4ab8ff; }
         .faq details p { color: #d0e4f8; padding-top: 12px; margin: 0; }
 
+        /* ===== ФУТЕР ===== */
         .footer-cta {
             background: linear-gradient(145deg, rgba(10,22,40,0.8), rgba(15,32,64,0.6));
             border-top: 1px solid rgba(26,48,80,0.3);
@@ -329,7 +329,7 @@
             color: #8aaac8;
         }
         .footer-grid strong {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: block;
@@ -380,8 +380,8 @@
             color: #8aaac8;
         }
         .mobile-bar a:last-child {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            color: #0a1628;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            color: #ffffff;
         }
 
         .age-gate {
@@ -425,6 +425,12 @@
             justify-content: center;
             flex-wrap: wrap;
         }
+        .age-gate-card a {
+            display: block;
+            margin-top: 16px;
+            color: #5a7a9a;
+            font-size: 14px;
+        }
 
         @media (max-width: 992px) {
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -467,13 +473,14 @@
     <div class="age-gate" data-age-gate role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
         <div class="age-gate-card">
             <span class="age-gate-mark">18+</span>
-            <p class="eyebrow">Проверка возраста</p>
-            <h2 id="age-gate-title">Подтвердите, что вам есть 18 лет</h2>
-            <p>Данный сайт содержит информацию об азартных играх и предназначен только для совершеннолетних пользователей.</p>
+            <p class="eyebrow">Подтверждение возраста</p>
+            <h2 id="age-gate-title">Вам уже исполнилось 18 лет?</h2>
+            <p>Сайт содержит информацию об азартных играх и предназначен только для совершеннолетних. Азартная игра не является способом заработка.</p>
             <div class="age-gate-actions">
-                <button type="button" class="btn primary large" data-age-accept>Да, мне 18+</button>
-                <button type="button" class="btn ghost large" data-age-reject>Мне меньше 18</button>
+                <button type="button" class="btn primary large" data-age-accept>Да, мне есть 18</button>
+                <button type="button" class="btn ghost large" data-age-reject>Мне нет 18</button>
             </div>
+            <a href="rules.html">Ответственная игра и ограничения</a>
         </div>
     </div>
 
@@ -522,21 +529,21 @@
                         <div class="amount">+250%</div>
                         <div class="sub">на первый депозит</div>
                         <div class="desc">Получите бонус до 250% на первый депозит + 300 бесплатных вращений на популярных слотах. Минимальный депозит — 500 RUB.</div>
-                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Активировать бонус</a>
+                        <a class="btn primary" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Активировать бонус</a>
                     </div>
                     <div class="bonus-card">
                         <span class="badge">🎰 Слоты</span>
                         <div class="amount">+150%</div>
                         <div class="sub">на второй депозит</div>
                         <div class="desc">Бонус 150% на второй депозит + 150 фриспинов для игры в слоты от ведущих провайдеров.</div>
-                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Активировать бонус</a>
+                        <a class="btn primary" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Активировать бонус</a>
                     </div>
                     <div class="bonus-card">
                         <span class="badge">💎 VIP</span>
                         <div class="amount">+100%</div>
                         <div class="sub">на третий депозит</div>
                         <div class="desc">Бонус 100% на третий депозит + 100 фриспинов. Отличная возможность увеличить свой игровой банк.</div>
-                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Активировать бонус</a>
+                        <a class="btn primary" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Активировать бонус</a>
                     </div>
                 </div>
             </div>
@@ -555,7 +562,7 @@
 
         <section>
             <div class="container prose">
-                <h2><span class="highlight">Условия получения</span> бонусов</h2>
+                <h2><span class="gradient-text">Условия получения</span> бонусов</h2>
                 <p>Для активации любого бонуса необходимо выполнить несколько простых шагов:</p>
                 <ul>
                     <li>Зарегистрируйтесь на официальном сайте Lucky Bear.</li>
@@ -564,7 +571,7 @@
                     <li>Бонус будет начислен автоматически или активируйте его в разделе «Бонусы».</li>
                 </ul>
 
-                <h2><span class="highlight">Условия отыгрыша</span> (Вейджер)</h2>
+                <h2><span class="gradient-text">Условия отыгрыша</span> (Вейджер)</h2>
                 <p>Все бонусы Lucky Bear имеют вейджер <strong>30x</strong> — это означает, что сумму бонуса необходимо прокрутить в играх 30 раз, прежде чем вывести выигрыш.</p>
                 <div class="table-wrap">
                     <table>
@@ -580,7 +587,7 @@
                     </table>
                 </div>
 
-                <h2><span class="highlight">Игры для отыгрыша</span> бонуса</h2>
+                <h2><span class="gradient-text">Игры для отыгрыша</span> бонуса</h2>
                 <p>Не все игры одинаково учитываются при отыгрыше бонуса. Обратите внимание на таблицу вклада:</p>
                 <div class="table-wrap">
                     <table>
@@ -596,7 +603,7 @@
                     </table>
                 </div>
 
-                <h2><span class="highlight">Дополнительные</span> акции и турниры</h2>
+                <h2><span class="gradient-text">Дополнительные</span> акции и турниры</h2>
                 <p>Lucky Bear регулярно проводит турниры и акции для всех игроков:</p>
                 <ul>
                     <li><strong>Еженедельный кэшбэк</strong> — возврат до 15% от проигранной суммы каждую неделю.</li>
@@ -605,7 +612,7 @@
                     <li><strong>Депозитные бонусы</strong> — специальные предложения в праздничные дни.</li>
                 </ul>
 
-                <h2><span class="highlight">Часто задаваемые</span> вопросы</h2>
+                <h2><span class="gradient-text">Часто задаваемые</span> вопросы</h2>
                 <div class="faq">
                     <details>
                         <summary>Как активировать приветственный бонус?</summary>
@@ -635,7 +642,7 @@
                 <h2>Получите свой бонус прямо сейчас!</h2>
                 <p>Зарегистрируйтесь в Lucky Bear и получите до 250% на первый депозит + 300 фриспинов. Не упустите свой шанс!</p>
             </div>
-            <a class="btn gold large" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Получить бонус</a>
+            <a class="btn primary large" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Получить бонус</a>
         </div>
     </section>
 
@@ -693,6 +700,20 @@
                     menuButton.innerHTML = expanded ? '<i class="fas fa-times"></i> Закрыть' : '<i class="fas fa-bars"></i> Меню';
                 });
             }
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
         })();
     </script>
 
