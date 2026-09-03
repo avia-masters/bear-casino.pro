@@ -23,12 +23,12 @@
     <!-- /Yandex.Metrika counter -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <style>
+        /* ===== БАЗА ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(160deg, #0a1628 0%, #122a4a 50%, #0a1628 100%);
+            background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
             color: #d0e4f8;
             line-height: 1.6;
             min-height: 100vh;
@@ -59,14 +59,8 @@
             color: #8aaac8;
             border: 1px solid #1a3050;
         }
-        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; }
+        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; box-shadow: 0 0 30px rgba(74,184,255,0.05); }
         .btn.large { padding: 14px 40px; font-size: 18px; }
-        .btn.gold {
-            background: linear-gradient(135deg, #f7971e, #ffd200);
-            color: #0a1628;
-            box-shadow: 0 4px 25px rgba(247,151,30,0.3);
-        }
-        .btn.gold:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(255,210,0,0.35); }
 
         .site-header {
             background: rgba(10,22,40,0.85);
@@ -482,6 +476,7 @@
         }
         .review-preview article:hover { border-color: #4ab8ff; }
         .review-preview article strong { color: #4ab8ff; }
+        .review-preview article .stars { color: #ffd700; letter-spacing: 2px; }
         .review-preview article p { color: #d0e4f8; margin-top: 6px; }
 
         .footer-cta {
@@ -703,12 +698,12 @@
     <div class="age-gate" data-age-gate role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
         <div class="age-gate-card">
             <span class="age-gate-mark">18+</span>
-            <p class="eyebrow">Проверка возраста</p>
-            <h2 id="age-gate-title">Подтвердите, что вам есть 18 лет</h2>
-            <p>Данный сайт содержит информацию об азартных играх и предназначен только для совершеннолетних пользователей. Помните, что азарт — это не способ заработка, а развлечение.</p>
+            <p class="eyebrow">Подтверждение возраста</p>
+            <h2 id="age-gate-title">Вам уже исполнилось 18 лет?</h2>
+            <p>Сайт содержит информацию об азартных играх и предназначен только для совершеннолетних. Азартная игра не является способом заработка.</p>
             <div class="age-gate-actions">
-                <button type="button" class="btn primary large" data-age-accept>Да, мне 18+</button>
-                <button type="button" class="btn ghost large" data-age-reject>Мне меньше 18</button>
+                <button type="button" class="btn primary large" data-age-accept>Да, мне есть 18</button>
+                <button type="button" class="btn ghost large" data-age-reject>Мне нет 18</button>
             </div>
             <a href="rules.html">Ответственная игра и ограничения</a>
         </div>
@@ -748,8 +743,8 @@
             <div class="container hero-grid">
                 <div>
                     <span class="eyebrow">Официальный сайт</span>
-                    <h1><span class="gradient-text">Lucky Bear Казино</span> — твой проводник в мире азарта</h1>
-                    <p>Полный обзор официального проекта Lucky Bear Казино для игроков из СНГ: регистрация за 30 секунд, бонусы до 250%, более 1500 слотов от 30+ ведущих провайдеров и выплаты за считанные минуты.</p>
+                    <h1><span class="gradient-text">Lucky Bear Казино</span> — лучший выбор для СНГ</h1>
+                    <p>Обзор официального проекта Lucky Bear Казино на русском языке: вход и регистрация, игры, бонусы, мультивалютные платежи, мобильный доступ, отзывы и правила безопасности.</p>
                     <div class="hero-buttons">
                         <a class="btn primary large" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Начать игру</a>
                         <a class="btn ghost large" href="rules.html">Изучить правила</a>
@@ -1060,15 +1055,18 @@
                 </div>
                 <div class="review-preview">
                     <article>
-                        <strong>Александр · ★★★★★</strong>
+                        <strong>Александр</strong>
+                        <div class="stars">★★★★★</div>
                         <p>Lucky Bear — лучшее казино для СНГ! 1500+ игр, моментальные выплаты за 5 минут. Бонус 250% реально помогает стартовать. Рекомендую!</p>
                     </article>
                     <article>
-                        <strong>Екатерина · ★★★★☆</strong>
+                        <strong>Екатерина</strong>
+                        <div class="stars">★★★★☆</div>
                         <p>Отличная платформа, удобный интерфейс. Иногда бывают задержки с выводом, но поддержка решает всё за пару минут. Хорошая программа лояльности.</p>
                     </article>
                     <article>
-                        <strong>Дмитрий · ★★★★★</strong>
+                        <strong>Дмитрий</strong>
+                        <div class="stars">★★★★★</div>
                         <p>Пополнил через криптокошелёк USDT — быстро и без комиссий. Выиграл крупную сумму, вывели в тот же день. Lucky Bear — это надёжно!</p>
                     </article>
                 </div>
