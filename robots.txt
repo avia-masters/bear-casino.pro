@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bear-casino.pro/sitemap.xml
