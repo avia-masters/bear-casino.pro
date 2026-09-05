@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приложение Lucky Bear — скачать на Android, iOS и PWA</title>
+    <meta name="description" content="Скачайте мобильное приложение Lucky Bear для Android, iOS и PWA. Играйте в любимые слоты с телефона, получайте бонусы и управляйте счетом в любое время.">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112271806', 'ym');
+
+        ym(112271806, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/112271806" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
+            color: #d0e4f8;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { color: #4ab8ff; text-decoration: none; transition: 0.3s; }
+        a:hover { color: #7acbff; text-shadow: 0 0 25px rgba(74,184,255,0.2); }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+        }
+        .btn.primary {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            color: #ffffff;
+            box-shadow: 0 4px 25px rgba(26,124,204,0.3);
+        }
+        .btn.primary:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(74,184,255,0.35); }
+        .btn.ghost {
+            background: transparent;
+            color: #8aaac8;
+            border: 1px solid #1a3050;
+        }
+        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; box-shadow: 0 0 30px rgba(74,184,255,0.05); }
+        .btn.large { padding: 14px 40px; font-size: 18px; }
+        .btn.android {
+            background: #3DDC84;
+            color: #0a1628;
+        }
+        .btn.android:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(61,220,132,0.3); }
+        .btn.ios {
+            background: #555555;
+            color: #ffffff;
+        }
+        .btn.ios:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(85,85,85,0.3); }
+
+        .site-header {
+            background: rgba(10,22,40,0.85);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(26,48,80,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .brand img { height: 44px; width: auto; display: block; }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: 1px solid #1a3050;
+            color: #d0e4f8;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #8aaac8;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .main-nav a:hover { color: #4ab8ff; text-shadow: 0 0 20px rgba(74,184,255,0.15); }
+        .main-nav a.active { color: #4ab8ff; border-bottom: 2px solid #4ab8ff; }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .age-badge {
+            background: #1a3050;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #4ab8ff;
+            font-size: 13px;
+        }
+
+        .page-title {
+            padding: 40px 0 20px;
+        }
+        .page-title h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .page-title p {
+            color: #8aaac8;
+            font-size: 18px;
+            max-width: 700px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section { padding: 50px 0; }
+        .section.soft { background: rgba(10,22,40,0.4); backdrop-filter: blur(4px); }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0 40px;
+        }
+        .app-card {
+            background: rgba(17,29,53,0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26,48,80,0.4);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        .app-card:hover { border-color: #4ab8ff; transform: translateY(-4px); }
+        .app-card .icon { font-size: 48px; margin-bottom: 16px; }
+        .app-card .icon.android-icon { color: #3DDC84; }
+        .app-card .icon.ios-icon { color: #999999; }
+        .app-card .icon.pwa-icon { color: #4ab8ff; }
+        .app-card h3 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
+        .app-card .version { color: #8aaac8; font-size: 14px; margin-bottom: 12px; }
+        .app-card .desc { color: #d0e4f8; margin-bottom: 20px; }
+        .app-card .btn { width: 100%; }
+
+        .app-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .app-features .item {
+            background: rgba(17,29,53,0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26,48,80,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .app-features .item .emoji { font-size: 32px; display: block; margin-bottom: 8px; }
+        .app-features .item strong { display: block; color: #ffffff; font-size: 16px; }
+        .app-features .item span { color: #8aaac8; font-size: 13px; }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+        }
+        .table-wrap table {
+            width: 100%;
+            background: rgba(17,29,53,0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            border-collapse: collapse;
+            font-size: 15px;
+            border: 1px solid rgba(26,48,80,0.4);
+        }
+        .table-wrap th {
+            background: rgba(26,48,80,0.4);
+            color: #4ab8ff;
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .table-wrap td {
+            padding: 12px 18px;
+            border-bottom: 1px solid rgba(26,48,80,0.3);
+            color: #d0e4f8;
+        }
+        .table-wrap tr:last-child td { border-bottom: none; }
+
+        .prose h2 {
+            font-size: 26px;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 40px 0 12px;
+            padding-top: 10px;
+        }
+        .prose h2:first-child { margin-top: 0; }
+        .prose p { color: #d0e4f8; margin-bottom: 16px; }
+        .prose ul {
+            list-style: none;
+            padding: 0;
+        }
+        .prose ul li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            color: #d0e4f8;
+        }
+        .prose ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ab8ff;
+            font-weight: 700;
+        }
+
+        .faq details {
+            background: rgba(17,29,53,0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26,48,80,0.4);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+        .faq details:hover { border-color: #4ab8ff; }
+        .faq summary {
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        .faq summary:hover { color: #4ab8ff; }
+        .faq details p { color: #d0e4f8; padding-top: 12px; margin: 0; }
+
+        .footer-cta {
+            background: linear-gradient(145deg, rgba(10,22,40,0.8), rgba(15,32,64,0.6));
+            border-top: 1px solid rgba(26,48,80,0.3);
+            border-bottom: 1px solid rgba(26,48,80,0.3);
+            padding: 50px 0;
+        }
+        .footer-cta .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-cta h2 { color: #ffffff; font-size: 28px; }
+        .footer-cta p { color: #8aaac8; max-width: 500px; }
+
+        .site-footer {
+            background: rgba(10,22,40,0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(26,48,80,0.3);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        .footer-brand p { color: #8aaac8; font-size: 14px; margin: 12px 0; }
+        .footer-trust {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-trust span {
+            background: rgba(26,48,80,0.4);
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #8aaac8;
+        }
+        .footer-grid strong {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-grid a {
+            display: block;
+            color: #8aaac8;
+            font-size: 14px;
+            padding: 3px 0;
+            transition: 0.3s;
+        }
+        .footer-grid a:hover { color: #4ab8ff; }
+        .footer-bottom {
+            border-top: 1px solid rgba(26,48,80,0.3);
+            padding-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #5a7a9a;
+        }
+
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10,22,40,0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(26,48,80,0.4);
+            padding: 10px;
+            gap: 10px;
+            z-index: 200;
+        }
+        .mobile-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .mobile-bar a:first-child {
+            background: transparent;
+            border: 1px solid #1a3050;
+            color: #8aaac8;
+        }
+        .mobile-bar a:last-child {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            color: #ffffff;
+        }
+
+        .age-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10,22,40,0.97);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .age-gate[hidden] { display: none; }
+        .age-gate-card {
+            background: rgba(17,29,53,0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(26,48,80,0.4);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 12px 60px rgba(0,0,0,0.4);
+        }
+        .age-gate-mark {
+            display: inline-block;
+            background: rgba(26,48,80,0.5);
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #4ab8ff;
+        }
+        .age-gate-card h2 { color: #ffffff; font-size: 26px; margin: 16px 0 8px; }
+        .age-gate-card p { color: #8aaac8; margin-bottom: 24px; }
+        .age-gate-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .age-gate-card a {
+            display: block;
+            margin-top: 16px;
+            color: #5a7a9a;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .menu-button { display: block; }
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px 0;
+                gap: 8px;
+            }
+            .main-nav.open { display: flex; }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                padding-top: 12px;
+                border-top: 1px solid rgba(26,48,80,0.3);
+            }
+            .page-title h1 { font-size: 30px; }
+            .app-grid { grid-template-columns: 1fr; }
+            .app-features { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-cta .container { flex-direction: column; text-align: center; }
+            .mobile-bar { display: flex; }
+            .site-footer { padding-bottom: 80px; }
+        }
+        @media (max-width: 480px) {
+            .page-title h1 { font-size: 24px; }
+            .app-features { grid-template-columns: 1fr; }
+            .btn.large { padding: 12px 24px; font-size: 16px; }
+            .age-gate-card { padding: 24px; margin: 16px; }
+        }
+        [hidden] { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <div class="age-gate" data-age-gate role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+        <div class="age-gate-card">
+            <span class="age-gate-mark">18+</span>
+            <p class="eyebrow">Подтверждение возраста</p>
+            <h2 id="age-gate-title">Вам уже исполнилось 18 лет?</h2>
+            <p>Сайт содержит информацию об азартных играх и предназначен только для совершеннолетних. Азартная игра не является способом заработка.</p>
+            <div class="age-gate-actions">
+                <button type="button" class="btn primary large" data-age-accept>Да, мне есть 18</button>
+                <button type="button" class="btn ghost large" data-age-reject>Мне нет 18</button>
+            </div>
+            <a href="rules.html">Ответственная игра и ограничения</a>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="Lucky Bear Казино" loading="lazy">
+                Lucky Bear
+            </a>
+            <button class="menu-button" type="button" data-menu aria-label="Открыть меню">
+                <i class="fas fa-bars"></i> Меню
+            </button>
+            <nav class="main-nav" data-nav>
+                <a href="index.html">Главная</a>
+                <a href="bonus.html">Бонусы</a>
+                <a href="games.html">Игры</a>
+                <a href="vip.html">VIP</a>
+                <a href="app.html" class="active">Приложение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="rules.html">Правила</a>
+            </nav>
+            <div class="header-actions">
+                <span class="age-badge">18+</span>
+                <a class="btn ghost" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Войти</a>
+                <a class="btn primary" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-title">
+            <div class="container">
+                <h1>Мобильное приложение <span class="gradient-text">Lucky Bear</span></h1>
+                <p>Скачайте официальное приложение Lucky Bear для Android, iOS или установите PWA-версию. Играйте в любимые слоты с телефона в любое время и в любом месте. Удобный интерфейс, быстрый доступ и полная синхронизация с вашим аккаунтом.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="app-grid">
+
+                    <div class="app-card">
+                        <div class="icon android-icon"><i class="fab fa-android"></i></div>
+                        <h3>Android</h3>
+                        <div class="version">Версия 3.2.1</div>
+                        <div class="desc">Скачайте APK-файл и установите приложение в один клик. Оптимизировано для всех устройств на Android 7.0 и выше. Полный доступ к 1500+ играм, бонусам и быстрым выплатам прямо с вашего смартфона.</div>
+                        <a class="btn android" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <i class="fas fa-download"></i> Скачать APK
+                        </a>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="icon ios-icon"><i class="fab fa-apple"></i></div>
+                        <h3>iOS</h3>
+                        <div class="version">Версия 3.2.1</div>
+                        <div class="desc">Установите приложение через App Store. Поддерживается на iPhone и iPad с iOS 13.0 и выше. Наслаждайтесь игрой с удобным управлением, быстрой загрузкой и полным функционалом казино.</div>
+                        <a class="btn ios" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <i class="fas fa-download"></i> Скачать в App Store
+                        </a>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="icon pwa-icon"><i class="fas fa-globe"></i></div>
+                        <h3>PWA</h3>
+                        <div class="version">Веб-приложение</div>
+                        <div class="desc">Установите PWA-версию прямо из браузера. Занимает минимум места и работает на любом устройстве. Не требует скачивания APK, доступно через любой современный браузер.</div>
+                        <a class="btn primary" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <i class="fas fa-download"></i> Установить PWA
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft">
+            <div class="container">
+                <h2 style="font-size: 28px; color: #ffffff; text-align: center; margin-bottom: 20px;">Преимущества мобильного приложения Lucky Bear</h2>
+                <div class="app-features">
+                    <div class="item">
+                        <span class="emoji">📱</span>
+                        <strong>Удобство</strong>
+                        <span>Играйте в любое время и в любом месте прямо с телефона. Больше не привязаны к компьютеру.</span>
+                    </div>
+                    <div class="item">
+                        <span class="emoji">⚡</span>
+                        <strong>Скорость</strong>
+                        <span>Мгновенная загрузка игр и быстрая обработка платежей. Никаких задержек и подвисаний.</span>
+                    </div>
+                    <div class="item">
+                        <span class="emoji">🔒</span>
+                        <strong>Безопасность</strong>
+                        <span>Защищённое соединение и биометрическая аутентификация. Ваши данные под надёжной защитой.</span>
+                    </div>
+                    <div class="item">
+                        <span class="emoji">🎰</span>
+                        <strong>Все игры</strong>
+                        <span>Полный доступ к каталогу из более чем 1500 слотов, настольных игр и live-казино.</span>
+                    </div>
+                    <div class="item">
+                        <span class="emoji">💰</span>
+                        <strong>Бонусы</strong>
+                        <span>Эксклюзивные бонусы и акции для пользователей приложения. Получайте больше, играя с телефона.</span>
+                    </div>
+                    <div class="item">
+                        <span class="emoji">📊</span>
+                        <strong>Управление</strong>
+                        <span>Полный контроль над счетом, историей транзакций и игровыми лимитами. Всё в одном месте.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container prose">
+                <h2><span class="gradient-text">Как установить</span> приложение Lucky Bear</h2>
+
+                <h3 style="color: #4ab8ff; margin-top: 24px; font-size: 22px;">📱 Android</h3>
+                <ul>
+                    <li>Скачайте APK-файл по кнопке выше с официального сайта Lucky Bear.</li>
+                    <li>Откройте загруженный файл и разрешите установку из неизвестных источников (если требуется). Это стандартная процедура для установки приложений не из Google Play.</li>
+                    <li>Дождитесь завершения установки и запустите приложение. Весь процесс занимает не более минуты.</li>
+                    <li>Войдите в аккаунт или зарегистрируйтесь и получите бонус до 250% на первый депозит прямо в приложении.</li>
+                </ul>
+
+                <h3 style="color: #4ab8ff; margin-top: 24px; font-size: 22px;">🍏 iOS</h3>
+                <ul>
+                    <li>Перейдите в App Store по кнопке выше или найдите приложение Lucky Bear в поиске.</li>
+                    <li>Нажмите «Загрузить» и подтвердите установку с помощью Face ID, Touch ID или пароля Apple ID.</li>
+                    <li>После установки откройте приложение и авторизуйтесь. Все ваши данные и игровой прогресс синхронизируются автоматически.</li>
+                    <li>Пользуйтесь всеми преимуществами мобильной версии Lucky Bear на вашем iPhone или iPad.</li>
+                </ul>
+
+                <h3 style="color: #4ab8ff; margin-top: 24px; font-size: 22px;">🌐 PWA (Браузерная версия)</h3>
+                <ul>
+                    <li>Откройте сайт Lucky Bear в браузере на телефоне (Chrome, Safari, Edge или любой другой).</li>
+                    <li>Нажмите на кнопку «Установить PWA» или выберите «Добавить на главный экран» в меню браузера.</li>
+                    <li>Ярлык приложения появится на главном экране вашего смартфона, как у обычного приложения.</li>
+                    <li>Запускайте Lucky Bear как обычное приложение без необходимости скачивать APK. Это идеальный вариант для тех, кто не хочет устанавливать дополнительные файлы.</li>
+                </ul>
+
+                <h2><span class="gradient-text">Требования</span> к устройствам</h2>
+                <p>Чтобы приложение Lucky Bear работало стабильно и быстро, убедитесь, что ваше устройство соответствует минимальным требованиям. Мы оптимизировали приложение для широкого спектра устройств, чтобы каждый игрок мог наслаждаться игрой без ограничений.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Платформа</th>
+                                <th>Минимальная версия</th>
+                                <th>Рекомендуемая версия</th>
+                                <th>Свободное место</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Android</strong></td>
+                                <td>7.0</td>
+                                <td>9.0 и выше</td>
+                                <td>100 МБ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>iOS</strong></td>
+                                <td>13.0</td>
+                                <td>15.0 и выше</td>
+                                <td>150 МБ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PWA</strong></td>
+                                <td>Любой браузер</td>
+                                <td>Chrome, Safari, Edge</td>
+                                <td>5 МБ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2><span class="gradient-text">Часто задаваемые</span> вопросы</h2>
+                <div class="faq">
+                    <details>
+                        <summary>Безопасно ли скачивать APK-файл?</summary>
+                        <p>Да, APK-файл Lucky Bear проходит проверку на вирусы и полностью безопасен для установки. Скачивайте только с официального сайта или по прямой ссылке с этой страницы. Мы гарантируем, что файл не содержит вредоносного кода.</p>
+                    </details>
+                    <details>
+                        <summary>Чем приложение отличается от сайта?</summary>
+                        <p>Приложение оптимизировано для мобильных устройств, работает быстрее, поддерживает push-уведомления о бонусах и акциях, а также биометрический вход (отпечаток пальца или Face ID). Интерфейс адаптирован под сенсорное управление для максимального удобства.</p>
+                    </details>
+                    <details>
+                        <summary>Можно ли играть в приложении без интернета?</summary>
+                        <p>Нет, для игры требуется стабильное интернет-соединение. Все игры работают онлайн, так как данные обрабатываются на серверах казино. Рекомендуем использовать Wi-Fi или мобильный интернет с хорошей скоростью.</p>
+                    </details>
+                    <details>
+                        <summary>Поддерживается ли мультивалютность в приложении?</summary>
+                        <p>Да, в приложении доступны все те же валюты, что и на сайте: RUB, USD, EUR, KZT, UZS, USDT и BTC. Выберите валюту аккаунта при регистрации или в настройках профиля.</p>
+                    </details>
+                    <details>
+                        <summary>Как обновить приложение до новой версии?</summary>
+                        <p>Обновления выходят автоматически. Для Android вы получите уведомление о доступной новой версии APK, для iOS — обновление через App Store. Рекомендуем всегда устанавливать последнюю версию для стабильной работы.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="footer-cta">
+        <div class="container">
+            <div>
+                <h2>Скачайте Lucky Bear на свой телефон!</h2>
+                <p>Установите приложение и получите доступ к 1500+ играм, эксклюзивным бонусам и быстрым выплатам прямо с мобильного устройства. Играйте где угодно и когда угодно!</p>
+            </div>
+            <a class="btn primary large" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Скачать приложение</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <img src="images/logo.png" alt="Lucky Bear Казино" style="height:40px; width:auto;">
+                    <span style="font-size:20px; font-weight:800; color:#ffffff;">Lucky Bear</span>
+                </div>
+                <p>Русскоязычный сайт Lucky Bear Казино для совершеннолетних пользователей из стран СНГ. Азартная игра не является способом заработка.</p>
+                <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка</span></div>
+            </div>
+            <div><strong>Аккаунт</strong><a href="index.html">Главная</a><a href="bonus.html">Бонусы</a></div>
+            <div><strong>Игры</strong><a href="games.html">Каталог игр</a><a href="vip.html">VIP</a></div>
+            <div><strong>Приложение</strong><a href="app.html">Приложение</a></div>
+            <div><strong>Контакты</strong><a href="contacts.html">Контакты</a><a href="reviews.html">Отзывы</a></div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Lucky Bear Казино</span>
+            <span>Русская версия · СНГ · 18+</span>
+        </div>
+    </footer>
+
+    <div class="mobile-bar">
+        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Войти</a>
+        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Играть</a>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const ageGate = document.querySelector('[data-age-gate]');
+            const ageAccept = document.querySelector('[data-age-accept]');
+            const ageReject = document.querySelector('[data-age-reject]');
+            if (localStorage.getItem('ageVerified') === 'true') { if (ageGate) ageGate.hidden = true; }
+            if (ageAccept) {
+                ageAccept.addEventListener('click', function() {
+                    localStorage.setItem('ageVerified', 'true');
+                    if (ageGate) ageGate.hidden = true;
+                });
+            }
+            if (ageReject) {
+                ageReject.addEventListener('click', function() {
+                    window.location.href = 'https://www.google.com';
+                });
+            }
+
+            const menuButton = document.querySelector('[data-menu]');
+            const nav = document.querySelector('[data-nav]');
+            if (menuButton && nav) {
+                menuButton.addEventListener('click', function() {
+                    nav.classList.toggle('open');
+                    const expanded = nav.classList.contains('open');
+                    menuButton.setAttribute('aria-expanded', expanded);
+                    menuButton.innerHTML = expanded ? '<i class="fas fa-times"></i> Закрыть' : '<i class="fas fa-bars"></i> Меню';
+                });
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
