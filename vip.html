@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP-программа Lucky Bear — эксклюзивные привилегии для игроков</title>
+    <meta name="description" content="VIP-программа Lucky Bear для активных игроков. Кэшбэк до 20%, персональный менеджер, ускоренные выплаты, эксклюзивные бонусы и турниры с крупными призами.">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112271806', 'ym');
+
+        ym(112271806, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/112271806" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
+            color: #d0e4f8;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { color: #4ab8ff; text-decoration: none; transition: 0.3s; }
+        a:hover { color: #7acbff; text-shadow: 0 0 25px rgba(74,184,255,0.2); }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+        }
+        .btn.primary {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            color: #ffffff;
+            box-shadow: 0 4px 25px rgba(26,124,204,0.3);
+        }
+        .btn.primary:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(74,184,255,0.35); }
+        .btn.ghost {
+            background: transparent;
+            color: #8aaac8;
+            border: 1px solid #1a3050;
+        }
+        .btn.ghost:hover { border-color: #4ab8ff; color: #4ab8ff; box-shadow: 0 0 30px rgba(74,184,255,0.05); }
+        .btn.large { padding: 14px 40px; font-size: 18px; }
+        .btn.gold {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            color: #0a1628;
+            box-shadow: 0 4px 25px rgba(247,151,30,0.3);
+        }
+        .btn.gold:hover { transform: scale(1.04); box-shadow: 0 8px 40px rgba(255,210,0,0.35); }
+
+        .site-header {
+            background: rgba(10,22,40,0.85);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(26,48,80,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .brand img { height: 44px; width: auto; display: block; }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: 1px solid #1a3050;
+            color: #d0e4f8;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #8aaac8;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .main-nav a:hover { color: #4ab8ff; text-shadow: 0 0 20px rgba(74,184,255,0.15); }
+        .main-nav a.active { color: #4ab8ff; border-bottom: 2px solid #4ab8ff; }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .age-badge {
+            background: #1a3050;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #4ab8ff;
+            font-size: 13px;
+        }
+
+        .page-title {
+            padding: 40px 0 20px;
+        }
+        .page-title h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .page-title p {
+            color: #8aaac8;
+            font-size: 18px;
+            max-width: 750px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-blue {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section { padding: 50px 0; }
+        .section.soft { background: rgba(10,22,40,0.4); backdrop-filter: blur(4px); }
+
+        .vip-intro {
+            background: rgba(17,29,53,0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26,48,80,0.4);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .vip-intro h2 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        .vip-intro p {
+            color: #d0e4f8;
+            margin-bottom: 12px;
+        }
+        .vip-intro .highlight {
+            color: #ffd200;
+            font-weight: 600;
+        }
+
+        .vip-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+        .vip-level {
+            background: rgba(17,29,53,0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26,48,80,0.4);
+            border-radius: 16px;
+            padding: 28px 24px;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        .vip-level:hover { border-color: #ffd200; transform: translateY(-4px); }
+        .vip-level .level-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffd200;
+            margin-bottom: 4px;
+        }
+        .vip-level .level-badge {
+            display: inline-block;
+            background: rgba(26,48,80,0.4);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #8aaac8;
+            margin-bottom: 12px;
+        }
+        .vip-level .level-perks {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .vip-level .level-perks li {
+            padding: 6px 0 6px 28px;
+            position: relative;
+            color: #d0e4f8;
+            font-size: 14px;
+        }
+        .vip-level .level-perks li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ffd200;
+            font-weight: 700;
+        }
+        .vip-level .btn { margin-top: 16px; width: 100%; }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+        }
+        .table-wrap table {
+            width: 100%;
+            background: rgba(17,29,53,0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            border-collapse: collapse;
+            font-size: 15px;
+            border: 1px solid rgba(26,48,80,0.4);
+        }
+        .table-wrap th {
+            background: rgba(26,48,80,0.4);
+            color: #ffd200;
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .table-wrap td {
+            padding: 12px 18px;
+            border-bottom: 1px solid rgba(26,48,80,0.3);
+            color: #d0e4f8;
+        }
+        .table-wrap tr:last-child td { border-bottom: none; }
+        .table-wrap .highlight { color: #ffd200; font-weight: 600; }
+
+        .prose h2 {
+            font-size: 26px;
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 40px 0 12px;
+            padding-top: 10px;
+        }
+        .prose h2:first-child { margin-top: 0; }
+        .prose h2 .blue {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .prose p { color: #d0e4f8; margin-bottom: 16px; }
+        .prose ul {
+            list-style: none;
+            padding: 0;
+        }
+        .prose ul li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            color: #d0e4f8;
+        }
+        .prose ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ffd200;
+            font-weight: 700;
+        }
+
+        .faq details {
+            background: rgba(17,29,53,0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26,48,80,0.4);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+        .faq details:hover { border-color: #ffd200; }
+        .faq summary {
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        .faq summary:hover { color: #ffd200; }
+        .faq details p { color: #d0e4f8; padding-top: 12px; margin: 0; }
+
+        .footer-cta {
+            background: linear-gradient(145deg, rgba(10,22,40,0.8), rgba(15,32,64,0.6));
+            border-top: 1px solid rgba(26,48,80,0.3);
+            border-bottom: 1px solid rgba(26,48,80,0.3);
+            padding: 50px 0;
+        }
+        .footer-cta .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-cta h2 { color: #ffffff; font-size: 28px; }
+        .footer-cta p { color: #8aaac8; max-width: 500px; }
+
+        .site-footer {
+            background: rgba(10,22,40,0.8);
+            backdrop-filter: blur(10px);
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(26,48,80,0.3);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        .footer-brand p { color: #8aaac8; font-size: 14px; margin: 12px 0; }
+        .footer-trust {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-trust span {
+            background: rgba(26,48,80,0.4);
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #8aaac8;
+        }
+        .footer-grid strong {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-grid a {
+            display: block;
+            color: #8aaac8;
+            font-size: 14px;
+            padding: 3px 0;
+            transition: 0.3s;
+        }
+        .footer-grid a:hover { color: #4ab8ff; }
+        .footer-bottom {
+            border-top: 1px solid rgba(26,48,80,0.3);
+            padding-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #5a7a9a;
+        }
+
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10,22,40,0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(26,48,80,0.4);
+            padding: 10px;
+            gap: 10px;
+            z-index: 200;
+        }
+        .mobile-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .mobile-bar a:first-child {
+            background: transparent;
+            border: 1px solid #1a3050;
+            color: #8aaac8;
+        }
+        .mobile-bar a:last-child {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            color: #0a1628;
+        }
+
+        .age-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10,22,40,0.97);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .age-gate[hidden] { display: none; }
+        .age-gate-card {
+            background: rgba(17,29,53,0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(26,48,80,0.4);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 12px 60px rgba(0,0,0,0.4);
+        }
+        .age-gate-mark {
+            display: inline-block;
+            background: rgba(26,48,80,0.5);
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #4ab8ff;
+        }
+        .age-gate-card h2 { color: #ffffff; font-size: 26px; margin: 16px 0 8px; }
+        .age-gate-card p { color: #8aaac8; margin-bottom: 24px; }
+        .age-gate-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .age-gate-card a {
+            display: block;
+            margin-top: 16px;
+            color: #5a7a9a;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .menu-button { display: block; }
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px 0;
+                gap: 8px;
+            }
+            .main-nav.open { display: flex; }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                padding-top: 12px;
+                border-top: 1px solid rgba(26,48,80,0.3);
+            }
+            .page-title h1 { font-size: 30px; }
+            .vip-levels { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-cta .container { flex-direction: column; text-align: center; }
+            .mobile-bar { display: flex; }
+            .site-footer { padding-bottom: 80px; }
+            .vip-intro { padding: 24px; }
+        }
+        @media (max-width: 480px) {
+            .page-title h1 { font-size: 24px; }
+            .btn.large { padding: 12px 24px; font-size: 16px; }
+            .age-gate-card { padding: 24px; margin: 16px; }
+        }
+        [hidden] { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <div class="age-gate" data-age-gate role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+        <div class="age-gate-card">
+            <span class="age-gate-mark">18+</span>
+            <p class="eyebrow">Подтверждение возраста</p>
+            <h2 id="age-gate-title">Вам уже исполнилось 18 лет?</h2>
+            <p>Сайт содержит информацию об азартных играх и предназначен только для совершеннолетних. Азартная игра не является способом заработка.</p>
+            <div class="age-gate-actions">
+                <button type="button" class="btn primary large" data-age-accept>Да, мне есть 18</button>
+                <button type="button" class="btn ghost large" data-age-reject>Мне нет 18</button>
+            </div>
+            <a href="rules.html">Ответственная игра и ограничения</a>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="brand" href="index.html">
+                <img src="images/logo.png" alt="Lucky Bear Казино" loading="lazy">
+                Lucky Bear
+            </a>
+            <button class="menu-button" type="button" data-menu aria-label="Открыть меню">
+                <i class="fas fa-bars"></i> Меню
+            </button>
+            <nav class="main-nav" data-nav>
+                <a href="index.html">Главная</a>
+                <a href="bonus.html">Бонусы</a>
+                <a href="games.html">Игры</a>
+                <a href="vip.html" class="active">VIP</a>
+                <a href="app.html">Приложение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="rules.html">Правила</a>
+            </nav>
+            <div class="header-actions">
+                <span class="age-badge">18+</span>
+                <a class="btn ghost" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Войти</a>
+                <a class="btn primary" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-title">
+            <div class="container">
+                <h1>VIP-программа <span class="gradient-text">Lucky Bear</span></h1>
+                <p>Эксклюзивные привилегии для самых активных игроков. Повышенный кэшбэк, персональный менеджер, ускоренные выплаты и уникальные бонусы. Станьте частью элитного клуба Lucky Bear!</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="vip-intro">
+                    <h2>👑 Добро пожаловать в VIP-клуб Lucky Bear</h2>
+                    <p>VIP-программа Lucky Bear создана для игроков, которые ценят комфорт, скорость и эксклюзивный подход. Мы разработали многоуровневую систему лояльности, которая вознаграждает самых активных пользователей. Чем выше ваш статус, тем больше привилегий и бонусов вы получаете.</p>
+                    <p>Присоединяйтесь к элитному клубу и наслаждайтесь игрой с максимальными преимуществами. <span class="highlight">Ваш статус — ваши возможности!</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section soft">
+            <div class="container">
+                <h2 style="font-size: 28px; color: #ffffff; text-align: center; margin-bottom: 8px;">Уровни VIP-статуса</h2>
+                <p style="text-align: center; color: #8aaac8; margin-bottom: 20px;">Каждый уровень открывает новые возможности и привилегии</p>
+
+                <div class="vip-levels">
+                    <div class="vip-level">
+                        <div class="level-name">🥉 Бронза</div>
+                        <div class="level-badge">Начальный уровень</div>
+                        <ul class="level-perks">
+                            <li>Кэшбэк до 5%</li>
+                            <li>Приоритетная поддержка</li>
+                            <li>Еженедельные бонусы</li>
+                            <li>Участие в турнирах</li>
+                        </ul>
+                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Начать путь</a>
+                    </div>
+
+                    <div class="vip-level">
+                        <div class="level-name">🥈 Серебро</div>
+                        <div class="level-badge">От 50 000 RUB</div>
+                        <ul class="level-perks">
+                            <li>Кэшбэк до 8%</li>
+                            <li>Персональный менеджер</li>
+                            <li>Ускоренные выплаты</li>
+                            <li>Эксклюзивные бонусы</li>
+                            <li>Приоритет в турнирах</li>
+                        </ul>
+                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Получить Серебро</a>
+                    </div>
+
+                    <div class="vip-level">
+                        <div class="level-name">🥇 Золото</div>
+                        <div class="level-badge">От 150 000 RUB</div>
+                        <ul class="level-perks">
+                            <li>Кэшбэк до 12%</li>
+                            <li>Персональный менеджер 24/7</li>
+                            <li>Мгновенные выплаты</li>
+                            <li>Персональные бонусы</li>
+                            <li>Приглашения на закрытые мероприятия</li>
+                            <li>Повышенные лимиты</li>
+                        </ul>
+                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Получить Золото</a>
+                    </div>
+
+                    <div class="vip-level">
+                        <div class="level-name">💎 Платина</div>
+                        <div class="level-badge">От 500 000 RUB</div>
+                        <ul class="level-perks">
+                            <li>Кэшбэк до 16%</li>
+                            <li>Персональный VIP-менеджер</li>
+                            <li>Мгновенные выплаты в любое время</li>
+                            <li>Уникальные подарки и призы</li>
+                            <li>Эксклюзивные турниры</li>
+                            <li>Повышенные лимиты на вывод</li>
+                            <li>Индивидуальные условия</li>
+                        </ul>
+                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Получить Платину</a>
+                    </div>
+
+                    <div class="vip-level">
+                        <div class="level-name">👑 Алмаз</div>
+                        <div class="level-badge">От 1 000 000 RUB</div>
+                        <ul class="level-perks">
+                            <li>Кэшбэк до 20%</li>
+                            <li>Личный VIP-менеджер 24/7</li>
+                            <li>Мгновенные выплаты без лимитов</li>
+                            <li>Путешествия и подарки</li>
+                            <li>Закрытые турниры с крупными призами</li>
+                            <li>Индивидуальные бонусы и промокоды</li>
+                            <li>Приоритет во всех вопросах</li>
+                            <li>Эксклюзивные подарки на день рождения</li>
+                        </ul>
+                        <a class="btn gold" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Получить Алмаз</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container prose">
+                <h2><span class="gradient-text">Как стать VIP-игроком</span> Lucky Bear</h2>
+                <p>Путь к элитному статусу в Lucky Bear прост и понятен. Мы ценим каждого игрока и предоставляем возможности для роста. Вот что нужно сделать, чтобы стать частью VIP-клуба:</p>
+                <ul>
+                    <li><strong>Активно играйте</strong> — регулярная игра в слоты и другие игры увеличивает ваш статус. Чем больше вы играете, тем быстрее растёт ваш уровень.</li>
+                    <li><strong>Пополняйте счёт</strong> — депозиты напрямую влияют на ваш VIP-статус. Крупные пополнения ускоряют переход на новый уровень.</li>
+                    <li><strong>Участвуйте в турнирах</strong> — регулярные турниры и акции помогают быстрее продвигаться по уровням VIP-программы.</li>
+                    <li><strong>Свяжитесь с поддержкой</strong> — если вы уже достигли значительных результатов, напишите в поддержку для ускоренного повышения статуса.</li>
+                </ul>
+
+                <h2><span class="gradient-text">Преимущества VIP-статуса</span> в Lucky Bear</h2>
+                <p>VIP-игроки Lucky Bear получают доступ к целому ряду эксклюзивных преимуществ, которые делают игру максимально комфортной и выгодной:</p>
+                <ul>
+                    <li><strong>Повышенный кэшбэк</strong> — возвращайте до 20% от проигранных средств каждую неделю. Чем выше ваш статус, тем больше кэшбэк.</li>
+                    <li><strong>Персональный менеджер</strong> — ваш личный помощник всегда на связи. Решайте любые вопросы быстро и без ожидания в очереди.</li>
+                    <li><strong>Ускоренные выплаты</strong> — деньги на ваш счёт приходят мгновенно или в течение нескольких минут. Больше никаких задержек.</li>
+                    <li><strong>Эксклюзивные бонусы</strong> — персональные промокоды, повышенные бонусы на депозиты и уникальные акции только для VIP-игроков.</li>
+                    <li><strong>Приоритетная поддержка</strong> — ваши вопросы решаются в первую очередь. Поддержка отвечает в течение нескольких минут.</li>
+                    <li><strong>Закрытые турниры</strong> — участвуйте в эксклюзивных турнирах с крупными призовыми фондами и уникальными призами.</li>
+                    <li><strong>Подарки и призы</strong> — путешествия, техника, билеты на мероприятия и другие ценные подарки для самых активных игроков.</li>
+                    <li><strong>Повышенные лимиты</strong> — увеличенные лимиты на пополнение и вывод средств. Играйте без ограничений.</li>
+                </ul>
+
+                <h2><span class="gradient-text">Сравнительная таблица</span> VIP-уровней</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Уровень</th>
+                                <th>Кэшбэк</th>
+                                <th>Менеджер</th>
+                                <th>Выплаты</th>
+                                <th>Бонусы</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong class="highlight">Бронза</strong></td>
+                                <td>до 5%</td>
+                                <td>—</td>
+                                <td>стандартные</td>
+                                <td>еженедельные</td>
+                            </tr>
+                            <tr>
+                                <td><strong class="highlight">Серебро</strong></td>
+                                <td>до 8%</td>
+                                <td>✅</td>
+                                <td>ускоренные</td>
+                                <td>эксклюзивные</td>
+                            </tr>
+                            <tr>
+                                <td><strong class="highlight">Золото</strong></td>
+                                <td>до 12%</td>
+                                <td>✅ 24/7</td>
+                                <td>мгновенные</td>
+                                <td>персональные</td>
+                            </tr>
+                            <tr>
+                                <td><strong class="highlight">Платина</strong></td>
+                                <td>до 16%</td>
+                                <td>✅ VIP 24/7</td>
+                                <td>мгновенные</td>
+                                <td>уникальные</td>
+                            </tr>
+                            <tr>
+                                <td><strong class="highlight">Алмаз</strong></td>
+                                <td>до 20%</td>
+                                <td>✅ Личный 24/7</td>
+                                <td>мгновенные без лимитов</td>
+                                <td>индивидуальные</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2><span class="gradient-text">Часто задаваемые</span> вопросы о VIP-программе</h2>
+                <div class="faq">
+                    <details>
+                        <summary>Как узнать свой текущий VIP-статус?</summary>
+                        <p>Ваш текущий VIP-статус отображается в личном кабинете в разделе «Мой статус». Также вы можете обратиться в службу поддержки для получения подробной информации.</p>
+                    </details>
+                    <details>
+                        <summary>Как быстро повысить свой VIP-уровень?</summary>
+                        <p>Самый быстрый способ — активно играть и делать регулярные депозиты. Участие в турнирах и акциях также помогает быстрее продвигаться по уровням VIP-программы.</p>
+                    </details>
+                    <details>
+                        <summary>Можно ли потерять VIP-статус?</summary>
+                        <p>VIP-статус обновляется ежемесячно на основе вашей активности. Если вы не играете в течение длительного времени, статус может быть понижен. Мы рекомендуем поддерживать активность для сохранения привилегий.</p>
+                    </details>
+                    <details>
+                        <summary>Какие бонусы получают VIP-игроки?</summary>
+                        <p>VIP-игроки получают эксклюзивные бонусы на депозиты, персональные промокоды, повышенный кэшбэк, участие в закрытых турнирах и многое другое. Чем выше ваш статус, тем больше бонусов и привилегий.</p>
+                    </details>
+                    <details>
+                        <summary>Есть ли дополнительные привилегии для VIP-игроков?</summary>
+                        <p>Да, VIP-игроки также получают доступ к эксклюзивным мероприятиям, подаркам на день рождения, повышенным лимитам на вывод и персональному обслуживанию. Подробности уточняйте у вашего персонального менеджера.</p>
+                    </details>
+                </div>
+
+                <p style="margin-top: 24px; text-align: center; color: #8aaac8; font-size: 18px;">
+                    Присоединяйтесь к VIP-клубу Lucky Bear и наслаждайтесь игрой с максимальными преимуществами. <span style="color: #ffd200;">Ваш статус — ваши возможности!</span>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="footer-cta">
+        <div class="container">
+            <div>
+                <h2>Готовы стать VIP-игроком?</h2>
+                <p>Начните свой путь к элитному статусу в Lucky Bear уже сегодня. Получайте кэшбэк до 20%, персонального менеджера и эксклюзивные бонусы.</p>
+            </div>
+            <a class="btn gold large" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Стать VIP</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <img src="images/logo.png" alt="Lucky Bear Казино" style="height:40px; width:auto;">
+                    <span style="font-size:20px; font-weight:800; color:#ffffff;">Lucky Bear</span>
+                </div>
+                <p>Русскоязычный сайт Lucky Bear Казино для совершеннолетних пользователей из стран СНГ. Азартная игра не является способом заработка.</p>
+                <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка</span></div>
+            </div>
+            <div><strong>Аккаунт</strong><a href="index.html">Главная</a><a href="bonus.html">Бонусы</a></div>
+            <div><strong>Игры</strong><a href="games.html">Каталог игр</a><a href="vip.html">VIP</a></div>
+            <div><strong>Приложение</strong><a href="app.html">Приложение</a></div>
+            <div><strong>Контакты</strong><a href="contacts.html">Контакты</a><a href="reviews.html">Отзывы</a></div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Lucky Bear Казино</span>
+            <span>Русская версия · СНГ · 18+</span>
+        </div>
+    </footer>
+
+    <div class="mobile-bar">
+        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Войти</a>
+        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">Играть</a>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const ageGate = document.querySelector('[data-age-gate]');
+            const ageAccept = document.querySelector('[data-age-accept]');
+            const ageReject = document.querySelector('[data-age-reject]');
+            if (localStorage.getItem('ageVerified') === 'true') { if (ageGate) ageGate.hidden = true; }
+            if (ageAccept) {
+                ageAccept.addEventListener('click', function() {
+                    localStorage.setItem('ageVerified', 'true');
+                    if (ageGate) ageGate.hidden = true;
+                });
+            }
+            if (ageReject) {
+                ageReject.addEventListener('click', function() {
+                    window.location.href = 'https://www.google.com';
+                });
+            }
+
+            const menuButton = document.querySelector('[data-menu]');
+            const nav = document.querySelector('[data-nav]');
+            if (menuButton && nav) {
+                menuButton.addEventListener('click', function() {
+                    nav.classList.toggle('open');
+                    const expanded = nav.classList.contains('open');
+                    menuButton.setAttribute('aria-expanded', expanded);
+                    menuButton.innerHTML = expanded ? '<i class="fas fa-times"></i> Закрыть' : '<i class="fas fa-bars"></i> Меню';
+                });
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
