@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Игры Lucky Bear — более 1500 слотов от 30+ провайдеров</title>
-    <meta name="description" content="Каталог игр Lucky Bear для игроков из СНГ. Более 1500 слотов от Pragmatic Play, Evolution, PG Soft и других провайдеров. Играйте в лучшие автоматы онлайн.">
+    <meta name="description" content="Каталог игр Lucky Bear для игроков из СНГ. Более 1500 слотов от Pragmatic Play, Evolution и других провайдеров. Играйте в лучшие автоматы онлайн.">
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="images/logo.png">
 
@@ -153,34 +153,36 @@
         .section { padding: 50px 0; }
         .section.soft { background: rgba(10,22,40,0.4); backdrop-filter: blur(4px); }
 
-        .provider-filter {
+        /* ===== ФИЛЬТР КАТЕГОРИЙ ===== */
+        .category-filter {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin: 20px 0 30px;
         }
-        .provider-filter .filter-btn {
-            padding: 8px 20px;
+        .category-filter .filter-btn {
+            padding: 10px 24px;
             border-radius: 30px;
             background: rgba(17,29,53,0.6);
             border: 1px solid rgba(26,48,80,0.4);
             color: #8aaac8;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
         }
-        .provider-filter .filter-btn:hover { border-color: #4ab8ff; color: #4ab8ff; }
-        .provider-filter .filter-btn.active {
+        .category-filter .filter-btn:hover { border-color: #4ab8ff; color: #4ab8ff; }
+        .category-filter .filter-btn.active {
             background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             color: #ffffff;
             border-color: #4ab8ff;
         }
 
+        /* ===== СЕТКА ИГР (ПОЛНОРАЗМЕРНЫЕ) ===== */
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
             margin: 20px 0 40px;
         }
         .game-card {
@@ -191,17 +193,32 @@
             overflow: hidden;
             transition: 0.3s;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
         }
-        .game-card:hover { border-color: #4ab8ff; transform: translateY(-4px); }
-        .game-card a { display: block; text-decoration: none; color: inherit; }
+        .game-card:hover { border-color: #4ab8ff; transform: translateY(-4px); box-shadow: 0 8px 40px rgba(74,184,255,0.08); }
+        .game-card a { display: flex; flex-direction: column; text-decoration: none; color: inherit; height: 100%; }
+        .game-card .card-media {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: #0f2040;
+            flex-shrink: 0;
+        }
         .game-card .card-media img {
             width: 100%;
-            height: 180px;
+            height: 100%;
             object-fit: cover;
             display: block;
-            background: #0f2040;
+            transition: transform 0.3s;
         }
-        .game-card .card-body { padding: 16px 20px 20px; }
+        .game-card:hover .card-media img { transform: scale(1.03); }
+        .game-card .card-body {
+            padding: 20px 24px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
         .game-card .card-body .provider {
             font-size: 12px;
             color: #4ab8ff;
@@ -209,10 +226,32 @@
             letter-spacing: 0.5px;
             font-weight: 600;
         }
-        .game-card .card-body h3 { font-size: 18px; color: #ffffff; margin: 4px 0 8px; }
-        .game-card .card-body p { color: #8aaac8; font-size: 14px; }
-        .game-card .card-body .btn { margin-top: 12px; width: 100%; }
+        .game-card .card-body .category-tag {
+            display: inline-block;
+            background: rgba(26,48,80,0.4);
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            color: #8aaac8;
+            margin-top: 6px;
+            align-self: flex-start;
+        }
+        .game-card .card-body h3 { font-size: 20px; color: #ffffff; margin: 6px 0 10px; }
+        .game-card .card-body p { color: #8aaac8; font-size: 14px; flex: 1; }
+        .game-card .card-body .btn { margin-top: 14px; width: 100%; }
 
+        /* ===== КНОПКА "ЕЩЁ ИГРЫ" ===== */
+        .more-games {
+            text-align: center;
+            margin: 30px 0 20px;
+        }
+        .more-games .btn {
+            padding: 14px 40px;
+            font-size: 18px;
+        }
+        .more-games .btn i { margin-left: 10px; }
+
+        /* ===== ТАБЛИЦА ===== */
         .table-wrap {
             overflow-x: auto;
             margin: 16px 0 24px;
@@ -250,22 +289,6 @@
         }
         .prose h2:first-child { margin-top: 0; }
         .prose p { color: #d0e4f8; margin-bottom: 16px; }
-        .prose ul {
-            list-style: none;
-            padding: 0;
-        }
-        .prose ul li {
-            padding: 8px 0 8px 28px;
-            position: relative;
-            color: #d0e4f8;
-        }
-        .prose ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #4ab8ff;
-            font-weight: 700;
-        }
 
         .footer-cta {
             background: linear-gradient(145deg, rgba(10,22,40,0.8), rgba(15,32,64,0.6));
@@ -431,9 +454,9 @@
                 border-top: 1px solid rgba(26,48,80,0.3);
             }
             .page-title h1 { font-size: 30px; }
-            .games-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-            .provider-filter { gap: 6px; }
-            .provider-filter .filter-btn { font-size: 12px; padding: 6px 14px; }
+            .games-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+            .category-filter { gap: 6px; }
+            .category-filter .filter-btn { font-size: 13px; padding: 8px 16px; }
             .footer-grid { grid-template-columns: 1fr; }
             .footer-cta .container { flex-direction: column; text-align: center; }
             .mobile-bar { display: flex; }
@@ -497,194 +520,205 @@
         <section class="page-title">
             <div class="container">
                 <h1>Каталог игр <span class="gradient-text">Lucky Bear</span></h1>
-                <p>Более 1500 лицензионных слотов от 30+ ведущих мировых провайдеров. Играйте в лучшие автоматы, настольные игры и live-казино с живыми дилерами.</p>
+                <p>Более 1500 лицензионных слотов от ведущих мировых провайдеров. Играйте в лучшие автоматы, настольные игры, live-казино и краш-игры.</p>
             </div>
         </section>
 
+        <!-- ===== ФИЛЬТР КАТЕГОРИЙ ===== -->
         <section>
             <div class="container">
-                <div class="provider-filter" id="providerFilter">
-                    <button class="filter-btn active" data-provider="all">Все игры</button>
-                    <button class="filter-btn" data-provider="pragmatic">Pragmatic Play</button>
-                    <button class="filter-btn" data-provider="evolution">Evolution</button>
-                    <button class="filter-btn" data-provider="pgsoft">PG Soft</button>
-                    <button class="filter-btn" data-provider="hacksaw">Hacksaw Gaming</button>
-                    <button class="filter-btn" data-provider="bgaming">BGaming</button>
-                    <button class="filter-btn" data-provider="playngo">Play'n GO</button>
-                    <button class="filter-btn" data-provider="relax">Relax Gaming</button>
-                    <button class="filter-btn" data-provider="netent">NetEnt</button>
+                <div class="category-filter" id="categoryFilter">
+                    <button class="filter-btn active" data-category="all">Все игры</button>
+                    <button class="filter-btn" data-category="slots">Слоты</button>
+                    <button class="filter-btn" data-category="live">Live-казино</button>
+                    <button class="filter-btn" data-category="table">Настольные</button>
+                    <button class="filter-btn" data-category="crash">Краш-игры</button>
                 </div>
             </div>
         </section>
 
+        <!-- ===== СЕТКА ИГР ===== -->
         <section>
             <div class="container">
                 <div class="games-grid" id="gamesGrid">
 
-                    <!-- 1. Anubis Wrath -->
-                    <div class="game-card" data-provider="pragmatic">
+                    <!-- ===== СЛОТЫ (7 игр) ===== -->
+                    <div class="game-card" data-category="slots">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/anubis-wrath.jpg" alt="Anubis Wrath" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Anubis Wrath</h3>
                                 <p>Захватывающий слот с механикой выплат "везде" и множителями до x5000. Бонусный раунд с фриспинами.</p>
+                                <span class="category-tag">Слоты</span>
                                 <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <!-- 2. Wild Bounty Snowdown -->
-                    <div class="game-card" data-provider="pragmatic">
+                    <div class="game-card" data-category="slots">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/wild-bounty-snowdown.jpg" alt="Wild Bounty Snowdown" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Wild Bounty Snowdown</h3>
                                 <p>Приключенческий слот с каскадными барабанами, бонусными раундами и множителями до x1000.</p>
+                                <span class="category-tag">Слоты</span>
                                 <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <!-- 3. Treasures of Aztec -->
-                    <div class="game-card" data-provider="pragmatic">
+                    <div class="game-card" data-category="slots">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/treasures-of-aztec.jpg" alt="Treasures of Aztec" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Treasures of Aztec</h3>
                                 <p>Исследуйте древние цивилизации с расширяющимися символами и фриспинами. Джекпот до x2500.</p>
+                                <span class="category-tag">Слоты</span>
                                 <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <!-- 4. Crazy Time -->
-                    <div class="game-card" data-provider="evolution">
-                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/crazy-time.jpg" alt="Crazy Time" loading="lazy"></div>
-                            <div class="card-body">
-                                <div class="provider">Evolution</div>
-                                <h3>Crazy Time</h3>
-                                <p>Знаменитое шоу от Evolution с живыми дилерами, бонусными раундами и множителями до x10000.</p>
-                                <button class="btn primary">Играть</button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- 5. Aviators -->
-                    <div class="game-card" data-provider="pragmatic">
-                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/aviamasters-2.jpg" alt="Aviators" loading="lazy"></div>
-                            <div class="card-body">
-                                <div class="provider">Spribe</div>
-                                <h3>Aviators</h3>
-                                <p>Популярная краш-игра с растущими множителями. Забирайте выигрыш до падения самолёта!</p>
-                                <button class="btn primary">Играть</button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- 6. Blackjack First Person -->
-                    <div class="game-card" data-provider="evolution">
-                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/blackjack-first-person.jpg" alt="Blackjack First Person" loading="lazy"></div>
-                            <div class="card-body">
-                                <div class="provider">Evolution</div>
-                                <h3>Blackjack First Person</h3>
-                                <p>Классический блэкджек с видом от первого лица. Реалистичная атмосфера и быстрые раунды.</p>
-                                <button class="btn primary">Играть</button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- 7. Candy Hole -->
-                    <div class="game-card" data-provider="pragmatic">
+                    <div class="game-card" data-category="slots">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/candy-hole.jpg" alt="Candy Hole" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Candy Hole</h3>
                                 <p>Яркий сладкий слот с бонусными раундами, множителями и фриспинами. RTP 96.5%.</p>
+                                <span class="category-tag">Слоты</span>
                                 <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <!-- 8. Falling Pickaxe -->
-                    <div class="game-card" data-provider="bgaming">
+                    <div class="game-card" data-category="slots">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/falling-pickaxe.jpg" alt="Falling Pickaxe" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">BGaming</div>
                                 <h3>Falling Pickaxe</h3>
                                 <p>Увлекательный слот с падающими символами и множителями. Каскадные выигрыши до x3000.</p>
+                                <span class="category-tag">Слоты</span>
                                 <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <!-- 9. Mines -->
-                    <div class="game-card" data-provider="pragmatic">
-                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/mines.jpg" alt="Mines" loading="lazy"></div>
-                            <div class="card-body">
-                                <div class="provider">Spribe</div>
-                                <h3>Mines</h3>
-                                <p>Краш-игра с минами. Открывайте клетки и увеличивайте множитель, но не наступите на мину!</p>
-                                <button class="btn primary">Играть</button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- 10. Speed Roulette -->
-                    <div class="game-card" data-provider="evolution">
-                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
-                            <div class="card-media"><img src="images/speed-roulette.jpg" alt="Speed Roulette" loading="lazy"></div>
-                            <div class="card-body">
-                                <div class="provider">Evolution</div>
-                                <h3>Speed Roulette</h3>
-                                <p>Быстрая рулетка с живым дилером. Раунды всего за 25 секунд. Классические ставки и множители.</p>
-                                <button class="btn primary">Играть</button>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- 11. Speed Winner -->
-                    <div class="game-card" data-provider="pragmatic">
+                    <div class="game-card" data-category="slots">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/speed-winner.jpg" alt="Speed Winner" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Speed Winner</h3>
                                 <p>Динамичный слот с быстрыми раундами и крупными множителями. Максимальный выигрыш x5000.</p>
+                                <span class="category-tag">Слоты</span>
                                 <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
-                    <!-- 12. Tower Rush -->
-                    <div class="game-card" data-provider="pragmatic">
+                    <div class="game-card" data-category="slots">
                         <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
                             <div class="card-media"><img src="images/tower-rush.jpg" alt="Tower Rush" loading="lazy"></div>
                             <div class="card-body">
                                 <div class="provider">Pragmatic Play</div>
                                 <h3>Tower Rush</h3>
                                 <p>Приключенческий слот с башнями, бонусными раундами и множителями. Джекпот до x4000.</p>
+                                <span class="category-tag">Слоты</span>
+                                <button class="btn primary">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ===== LIVE-КАЗИНО (1 игра) ===== -->
+                    <div class="game-card" data-category="live">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media"><img src="images/crazy-time.jpg" alt="Crazy Time" loading="lazy"></div>
+                            <div class="card-body">
+                                <div class="provider">Evolution</div>
+                                <h3>Crazy Time</h3>
+                                <p>Знаменитое шоу от Evolution с живыми дилерами, бонусными раундами и множителями до x10000.</p>
+                                <span class="category-tag">Live-казино</span>
+                                <button class="btn primary">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ===== НАСТОЛЬНЫЕ (2 игры) ===== -->
+                    <div class="game-card" data-category="table">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media"><img src="images/blackjack-first-person.jpg" alt="Blackjack First Person" loading="lazy"></div>
+                            <div class="card-body">
+                                <div class="provider">Evolution</div>
+                                <h3>Blackjack First Person</h3>
+                                <p>Классический блэкджек с видом от первого лица. Реалистичная атмосфера и быстрые раунды.</p>
+                                <span class="category-tag">Настольные</span>
+                                <button class="btn primary">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="game-card" data-category="table">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media"><img src="images/speed-roulette.jpg" alt="Speed Roulette" loading="lazy"></div>
+                            <div class="card-body">
+                                <div class="provider">Evolution</div>
+                                <h3>Speed Roulette</h3>
+                                <p>Быстрая рулетка с живым дилером. Раунды всего за 25 секунд. Классические ставки и множители.</p>
+                                <span class="category-tag">Настольные</span>
+                                <button class="btn primary">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ===== КРАШ-ИГРЫ (2 игры) ===== -->
+                    <div class="game-card" data-category="crash">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media"><img src="images/aviamasters-2.jpg" alt="Aviators" loading="lazy"></div>
+                            <div class="card-body">
+                                <div class="provider">Spribe</div>
+                                <h3>Aviators</h3>
+                                <p>Популярная краш-игра с растущими множителями. Забирайте выигрыш до падения самолёта!</p>
+                                <span class="category-tag">Краш-игры</span>
+                                <button class="btn primary">Играть</button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="game-card" data-category="crash">
+                        <a href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                            <div class="card-media"><img src="images/mines.jpg" alt="Mines" loading="lazy"></div>
+                            <div class="card-body">
+                                <div class="provider">Spribe</div>
+                                <h3>Mines</h3>
+                                <p>Краш-игра с минами. Открывайте клетки и увеличивайте множитель, но не наступите на мину!</p>
+                                <span class="category-tag">Краш-игры</span>
                                 <button class="btn primary">Играть</button>
                             </div>
                         </a>
                     </div>
 
                 </div>
+
+                <!-- ===== КНОПКА "ЕЩЁ ИГРЫ" С РЕФЕРАЛКОЙ ===== -->
+                <div class="more-games">
+                    <a class="btn primary large" href="https://lb777.xyz/5dsgV7" rel="nofollow sponsored">
+                        Ещё игры <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
             </div>
         </section>
 
+        <!-- ===== ИНФОРМАЦИЯ ===== -->
         <section>
             <div class="container prose">
                 <h2><span class="gradient-text">Популярные категории</span> игр</h2>
-                <p>В каталоге Lucky Bear представлены игры на любой вкус. Мы собрали лучшие слоты, настольные игры и live-казино от проверенных провайдеров.</p>
+                <p>В каталоге Lucky Bear представлены игры на любой вкус. Мы собрали лучшие слоты, настольные игры, live-казино и краш-игры от проверенных провайдеров.</p>
                 <div class="table-wrap">
                     <table>
                         <thead>
@@ -694,18 +728,30 @@
                             <tr><td>Слоты</td><td>1200+</td><td>Бонусные раунды, фриспины, множители, джекпоты</td></tr>
                             <tr><td>Live-казино</td><td>200+</td><td>Игры с живыми дилерами, рулетка, блэкджек, покер</td></tr>
                             <tr><td>Настольные игры</td><td>100+</td><td>Рулетка, блэкджек, баккара, видеопокер</td></tr>
-                            <tr><td>Крэш-игры</td><td>50+</td><td>Mines, JetX, Plinko, Aviator и другие</td></tr>
+                            <tr><td>Краш-игры</td><td>50+</td><td>Mines, JetX, Plinko, Aviator и другие</td></tr>
                         </tbody>
                     </table>
                 </div>
 
                 <h2><span class="gradient-text">Советы по выбору</span> игр</h2>
                 <p>При выборе слота обращайте внимание на несколько ключевых параметров:</p>
-                <ul>
-                    <li><strong>RTP (Возврат игроку)</strong> — чем выше, тем лучше. Выбирайте слоты с RTP от 96%.</li>
-                    <li><strong>Волатильность</strong> — низкая даёт частые мелкие выигрыши, высокая — редкие, но крупные.</li>
-                    <li><strong>Бонусные функции</strong> — фриспины, множители, бонусные раунды увеличивают шансы на крупный выигрыш.</li>
-                    <li><strong>Провайдер</strong> — выбирайте игры от топовых разработчиков с хорошей репутацией.</li>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>RTP (Возврат игроку)</strong> — чем выше, тем лучше. Выбирайте слоты с RTP от 96%.
+                    </li>
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>Волатильность</strong> — низкая даёт частые мелкие выигрыши, высокая — редкие, но крупные.
+                    </li>
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>Бонусные функции</strong> — фриспины, множители, бонусные раунды увеличивают шансы на крупный выигрыш.
+                    </li>
+                    <li style="padding: 8px 0 8px 28px; position: relative; color: #d0e4f8;">
+                        <span style="position: absolute; left: 0; color: #4ab8ff; font-weight: 700;">✓</span>
+                        <strong>Провайдер</strong> — выбирайте игры от топовых разработчиков с хорошей репутацией.
+                    </li>
                 </ul>
             </div>
         </section>
@@ -751,6 +797,7 @@
     <script>
         (function() {
             'use strict';
+
             const ageGate = document.querySelector('[data-age-gate]');
             const ageAccept = document.querySelector('[data-age-accept]');
             const ageReject = document.querySelector('[data-age-reject]');
@@ -766,6 +813,7 @@
                     window.location.href = 'https://www.google.com';
                 });
             }
+
             const menuButton = document.querySelector('[data-menu]');
             const nav = document.querySelector('[data-nav]');
             if (menuButton && nav) {
@@ -776,22 +824,26 @@
                     menuButton.innerHTML = expanded ? '<i class="fas fa-times"></i> Закрыть' : '<i class="fas fa-bars"></i> Меню';
                 });
             }
+
+            // ===== ФИЛЬТР ПО КАТЕГОРИЯМ =====
             const filterButtons = document.querySelectorAll('.filter-btn');
             const gameCards = document.querySelectorAll('.game-card');
+
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
-                    const provider = this.dataset.provider;
+                    const category = this.dataset.category;
                     gameCards.forEach(card => {
-                        if (provider === 'all' || card.dataset.provider === provider) {
-                            card.style.display = 'block';
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'flex';
                         } else {
                             card.style.display = 'none';
                         }
                     });
                 });
             });
+
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
